@@ -24,16 +24,16 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.tsbtnSales = New System.Windows.Forms.ToolStripButton()
+        Me.tsbtnInv = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.tsbtnExit = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalesReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventoryReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
@@ -43,48 +43,48 @@ Partial Class frmMain
         'ToolStrip1
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripSeparator1, Me.ToolStripButton3})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbtnSales, Me.tsbtnInv, Me.ToolStripSeparator1, Me.tsbtnExit})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(140, 417)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton1
+        'tsbtnSales
         '
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(137, 68)
-        Me.ToolStripButton1.Text = "SALES"
-        Me.ToolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.tsbtnSales.Image = CType(resources.GetObject("tsbtnSales.Image"), System.Drawing.Image)
+        Me.tsbtnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.tsbtnSales.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.tsbtnSales.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbtnSales.Name = "tsbtnSales"
+        Me.tsbtnSales.Size = New System.Drawing.Size(137, 68)
+        Me.tsbtnSales.Text = "SALES"
+        Me.tsbtnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'ToolStripButton2
+        'tsbtnInv
         '
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(137, 68)
-        Me.ToolStripButton2.Text = "INVENTORY"
+        Me.tsbtnInv.Image = CType(resources.GetObject("tsbtnInv.Image"), System.Drawing.Image)
+        Me.tsbtnInv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.tsbtnInv.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.tsbtnInv.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbtnInv.Name = "tsbtnInv"
+        Me.tsbtnInv.Size = New System.Drawing.Size(137, 68)
+        Me.tsbtnInv.Text = "INVENTORY"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(137, 6)
         '
-        'ToolStripButton3
+        'tsbtnExit
         '
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(137, 68)
-        Me.ToolStripButton3.Text = "EXIT"
+        Me.tsbtnExit.Image = CType(resources.GetObject("tsbtnExit.Image"), System.Drawing.Image)
+        Me.tsbtnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.tsbtnExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.tsbtnExit.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbtnExit.Name = "tsbtnExit"
+        Me.tsbtnExit.Size = New System.Drawing.Size(137, 68)
+        Me.tsbtnExit.Text = "EXIT"
         '
         'MenuStrip1
         '
@@ -102,19 +102,6 @@ Partial Class frmMain
         Me.SystemToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.SystemToolStripMenuItem.Text = "&System"
         '
-        'ReportsToolStripMenuItem
-        '
-        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalesReportToolStripMenuItem, Me.InventoryReportsToolStripMenuItem})
-        Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
-        Me.ReportsToolStripMenuItem.Text = "&Reports"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ExitToolStripMenuItem.Text = "E&xit"
-        '
         'MaintenanceToolStripMenuItem
         '
         Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
@@ -125,6 +112,19 @@ Partial Class frmMain
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(149, 6)
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Text = "E&xit"
+        '
+        'ReportsToolStripMenuItem
+        '
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalesReportToolStripMenuItem, Me.InventoryReportsToolStripMenuItem})
+        Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
+        Me.ReportsToolStripMenuItem.Text = "&Reports"
         '
         'SalesReportToolStripMenuItem
         '
@@ -145,6 +145,7 @@ Partial Class frmMain
         Me.ClientSize = New System.Drawing.Size(961, 441)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmMain"
@@ -159,10 +160,10 @@ Partial Class frmMain
 
     End Sub
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbtnSales As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbtnInv As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbtnExit As System.Windows.Forms.ToolStripButton
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents SystemToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MaintenanceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
