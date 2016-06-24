@@ -25,29 +25,29 @@ Partial Class frmIMD
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmIMD))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCode = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtDescription = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.chkInv = New System.Windows.Forms.CheckBox()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtUoM = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cboSubCat = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboCat = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chkHold = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtDev = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.chkSales = New System.Windows.Forms.CheckBox()
+        Me.txtSale = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -71,14 +71,14 @@ Partial Class frmIMD
         Me.txtCode.TabIndex = 1
         Me.txtCode.Text = "IMD 00001"
         '
-        'TextBox1
+        'txtDescription
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(157, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(247, 21)
-        Me.TextBox1.TabIndex = 3
-        Me.TextBox1.Text = "Item Master Data 0001"
+        Me.txtDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescription.Location = New System.Drawing.Point(157, 27)
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.Size = New System.Drawing.Size(247, 21)
+        Me.txtDescription.TabIndex = 3
+        Me.txtDescription.Text = "Item Master Data 0001"
         '
         'Label2
         '
@@ -92,14 +92,14 @@ Partial Class frmIMD
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.CheckBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.chkInv)
+        Me.GroupBox1.Controls.Add(Me.txtPrice)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtUoM)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
+        Me.GroupBox1.Controls.Add(Me.cboSubCat)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.cboCat)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 54)
         Me.GroupBox1.Name = "GroupBox1"
@@ -108,25 +108,25 @@ Partial Class frmIMD
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Inventory"
         '
-        'CheckBox2
+        'chkInv
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.Location = New System.Drawing.Point(361, 82)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(112, 17)
-        Me.CheckBox2.TabIndex = 9
-        Me.CheckBox2.Text = "INVENTORIABLE"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.chkInv.AutoSize = True
+        Me.chkInv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkInv.Location = New System.Drawing.Point(361, 82)
+        Me.chkInv.Name = "chkInv"
+        Me.chkInv.Size = New System.Drawing.Size(112, 17)
+        Me.chkInv.TabIndex = 9
+        Me.chkInv.Text = "INVENTORIABLE"
+        Me.chkInv.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'txtPrice
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(120, 78)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(91, 21)
-        Me.TextBox3.TabIndex = 8
-        Me.TextBox3.Text = "100.00"
+        Me.txtPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrice.Location = New System.Drawing.Point(120, 78)
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(91, 21)
+        Me.txtPrice.TabIndex = 8
+        Me.txtPrice.Text = "100.00"
         '
         'Label6
         '
@@ -138,14 +138,14 @@ Partial Class frmIMD
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "Unit Price"
         '
-        'TextBox2
+        'txtUoM
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(9, 78)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(91, 21)
-        Me.TextBox2.TabIndex = 6
-        Me.TextBox2.Text = "PCS"
+        Me.txtUoM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUoM.Location = New System.Drawing.Point(9, 78)
+        Me.txtUoM.Name = "txtUoM"
+        Me.txtUoM.Size = New System.Drawing.Size(91, 21)
+        Me.txtUoM.TabIndex = 6
+        Me.txtUoM.Text = "PCS"
         '
         'Label5
         '
@@ -157,15 +157,15 @@ Partial Class frmIMD
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Unit of Measure"
         '
-        'ComboBox2
+        'cboSubCat
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Category 001", "Category 002"})
-        Me.ComboBox2.Location = New System.Drawing.Point(197, 34)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(185, 21)
-        Me.ComboBox2.TabIndex = 4
-        Me.ComboBox2.Text = "Sub - Category 0001"
+        Me.cboSubCat.FormattingEnabled = True
+        Me.cboSubCat.Items.AddRange(New Object() {"Category 001", "Category 002"})
+        Me.cboSubCat.Location = New System.Drawing.Point(197, 34)
+        Me.cboSubCat.Name = "cboSubCat"
+        Me.cboSubCat.Size = New System.Drawing.Size(185, 21)
+        Me.cboSubCat.TabIndex = 4
+        Me.cboSubCat.Text = "Sub - Category 0001"
         '
         'Label4
         '
@@ -177,15 +177,15 @@ Partial Class frmIMD
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Sub-Category"
         '
-        'ComboBox1
+        'cboCat
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Category 001", "Category 002"})
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 34)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(185, 21)
-        Me.ComboBox1.TabIndex = 2
-        Me.ComboBox1.Text = "Category 0001"
+        Me.cboCat.FormattingEnabled = True
+        Me.cboCat.Items.AddRange(New Object() {"Category 001", "Category 002"})
+        Me.cboCat.Location = New System.Drawing.Point(6, 34)
+        Me.cboCat.Name = "cboCat"
+        Me.cboCat.Size = New System.Drawing.Size(185, 21)
+        Me.cboCat.TabIndex = 2
+        Me.cboCat.Text = "Category 0001"
         '
         'Label3
         '
@@ -197,23 +197,23 @@ Partial Class frmIMD
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Category"
         '
-        'CheckBox1
+        'chkHold
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(410, 31)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(75, 17)
-        Me.CheckBox1.TabIndex = 5
-        Me.CheckBox1.Text = "ON HOLD"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkHold.AutoSize = True
+        Me.chkHold.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkHold.Location = New System.Drawing.Point(410, 31)
+        Me.chkHold.Name = "chkHold"
+        Me.chkHold.Size = New System.Drawing.Size(75, 17)
+        Me.chkHold.TabIndex = 5
+        Me.chkHold.Text = "ON HOLD"
+        Me.chkHold.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.TextBox5)
+        Me.GroupBox2.Controls.Add(Me.txtDev)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.CheckBox3)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.chkSales)
+        Me.GroupBox2.Controls.Add(Me.txtSale)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 173)
         Me.GroupBox2.Name = "GroupBox2"
@@ -222,44 +222,44 @@ Partial Class frmIMD
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sales"
         '
-        'TextBox5
+        'txtDev
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(120, 31)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(71, 21)
-        Me.TextBox5.TabIndex = 11
-        Me.TextBox5.Text = "3"
+        Me.txtDev.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDev.Location = New System.Drawing.Point(120, 34)
+        Me.txtDev.Name = "txtDev"
+        Me.txtDev.Size = New System.Drawing.Size(71, 21)
+        Me.txtDev.TabIndex = 11
+        Me.txtDev.Text = "3"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(117, 13)
+        Me.Label8.Location = New System.Drawing.Point(117, 18)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(58, 15)
         Me.Label8.TabIndex = 10
         Me.Label8.Text = "Deviation"
         '
-        'CheckBox3
+        'chkSales
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox3.Location = New System.Drawing.Point(361, 19)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(53, 17)
-        Me.CheckBox3.TabIndex = 9
-        Me.CheckBox3.Text = "SALE"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.chkSales.AutoSize = True
+        Me.chkSales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSales.Location = New System.Drawing.Point(361, 19)
+        Me.chkSales.Name = "chkSales"
+        Me.chkSales.Size = New System.Drawing.Size(53, 17)
+        Me.chkSales.TabIndex = 9
+        Me.chkSales.Text = "SALE"
+        Me.chkSales.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'txtSale
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(9, 34)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(91, 21)
-        Me.TextBox4.TabIndex = 8
-        Me.TextBox4.Text = "100.00"
+        Me.txtSale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSale.Location = New System.Drawing.Point(9, 34)
+        Me.txtSale.Name = "txtSale"
+        Me.txtSale.Size = New System.Drawing.Size(91, 21)
+        Me.txtSale.TabIndex = 8
+        Me.txtSale.Text = "100.00"
         '
         'Label7
         '
@@ -271,15 +271,15 @@ Partial Class frmIMD
         Me.Label7.TabIndex = 7
         Me.Label7.Text = "Sale Price"
         '
-        'TextBox6
+        'txtRemarks
         '
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(12, 274)
-        Me.TextBox6.Multiline = True
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(239, 70)
-        Me.TextBox6.TabIndex = 8
-        Me.TextBox6.Text = resources.GetString("TextBox6.Text")
+        Me.txtRemarks.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRemarks.Location = New System.Drawing.Point(12, 274)
+        Me.txtRemarks.Multiline = True
+        Me.txtRemarks.Name = "txtRemarks"
+        Me.txtRemarks.Size = New System.Drawing.Size(239, 70)
+        Me.txtRemarks.TabIndex = 8
+        Me.txtRemarks.Text = resources.GetString("txtRemarks.Text")
         '
         'Label9
         '
@@ -291,39 +291,39 @@ Partial Class frmIMD
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Remarks"
         '
-        'Button1
+        'btnSave
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(410, 267)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 36)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "&Save"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.Location = New System.Drawing.Point(410, 267)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 36)
+        Me.btnSave.TabIndex = 9
+        Me.btnSave.Text = "&Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnCancel
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(410, 309)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 36)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "&Cancel"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Location = New System.Drawing.Point(410, 309)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 36)
+        Me.btnCancel.TabIndex = 10
+        Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'frmIMD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(508, 360)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.txtRemarks)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.chkHold)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtDescription)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtCode)
         Me.Controls.Add(Me.Label1)
@@ -342,28 +342,28 @@ Partial Class frmIMD
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtCode As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtDescription As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboSubCat As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboCat As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtUoM As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents txtPrice As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents chkInv As System.Windows.Forms.CheckBox
+    Friend WithEvents chkHold As System.Windows.Forms.CheckBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents txtDev As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents chkSales As System.Windows.Forms.CheckBox
+    Friend WithEvents txtSale As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents txtRemarks As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents btnCancel As System.Windows.Forms.Button
 
 End Class
