@@ -128,6 +128,7 @@
 
 #Region "Procedures and Functions"
     Public Sub Save_ItemData()
+        Dim isNew As Boolean = True
         mySql = "SELECT * FROM " & fillData
         mySql &= String.Format(" WHERE ITEMCODE = '{0}'", ItemCode)
 
@@ -150,8 +151,27 @@
                 .Item("onHold") = IIf(onHold, 1, 0)
                 .Item("Comments") = Remarks
             End With
+            ds.Tables(fillData).Rows.Add(dsNewRow)
+        Else
+            With ds.Tables(fillData).Rows(0)
+                .Item("ItemCode") = ItemCode
+                .Item("Description") = Description
+                .Item("Categories") = Category
+                .Item("SubCat") = SubCategory
+                .Item("UoM") = UnitOfMeasure
+                .Item("UnitPrice") = UnitPrice
+                .Item("SalePrice") = SalePrice
+                .Item("MinDev") = MinimumDeviation
+                .Item("isSale") = IIf(isSaleable, 1, 0)
+                .Item("isInv") = IIf(isInventoriable, 1, 0)
+                .Item("onHold") = IIf(onHold, 1, 0)
+                .Item("Comments") = Remarks
+            End With
+
+            isNew = False
         End If
 
+        database.SaveEntry(ds, isNew)
     End Sub
 #End Region
 
