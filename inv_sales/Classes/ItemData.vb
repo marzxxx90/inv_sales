@@ -4,6 +4,16 @@
     Private fillData As String = "ItemMaster"
 
 #Region "Properties"
+    Private _itemID As Integer
+    Public Property ItemID() As Integer
+        Get
+            Return _itemID
+        End Get
+        Set(ByVal value As Integer)
+            _itemID = value
+        End Set
+    End Property
+
     Private _ItemCode As String
     Public Property ItemCode() As String
         Get
@@ -124,6 +134,22 @@
         End Set
     End Property
 
+    'DocLines
+    Private _itemQty As Double
+    Public Property Qty() As Double
+        Get
+            Return _itemQty
+        End Get
+        Set(ByVal value As Double)
+            _itemQty = value
+        End Set
+    End Property
+
+    Public ReadOnly Property RowTotal() As Double
+        Get
+            Return _itemQty * _unitPrice
+        End Get
+    End Property
 #End Region
 
 #Region "Procedures and Functions"
@@ -172,6 +198,28 @@
         End If
 
         database.SaveEntry(ds, isNew)
+    End Sub
+
+    Public Sub Load_Item(ByVal itemCode As String)
+        Dim mySql As String = String.Format("SELECT * FROM {1} WHERE ITEMCODE = '{0}'", itemCode, fillData)
+        Dim ds As DataSet = LoadSQL(mySql)
+
+        If ds.Tables(0).Rows.Count = 0 Then Exit Sub
+        With ds.Tables(0).Rows(0)
+            _itemID = .Item("ITEMID")
+            _ItemCode = .Item("ITEMCODE")
+            _Description = .Item("DESCRIPTION")
+            _category = .Item("CATEGORIES")
+            _subCategory = .Item("SUBCAT")
+            _uom = .Item("UOM")
+            _unitPrice = .Item("UNITPRICE")
+            _salePrice = .Item("SALEPRICE")
+            _minimumDeviation = .Item("MINDEV")
+            _isSale = IIf(.Item("ISSALE") = 1, True, False)
+            _isInv = IIf(.Item("ISINV") = 1, True, False)
+            _onHold = IIf(.Item("ONHOLD") = 1, True, False)
+            _remarks = .Item("COMMENTS")
+        End With
     End Sub
 #End Region
 
