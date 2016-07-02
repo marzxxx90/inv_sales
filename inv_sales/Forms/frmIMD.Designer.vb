@@ -68,7 +68,7 @@ Partial Class frmIMD
         Me.txtCode.Location = New System.Drawing.Point(12, 27)
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(139, 21)
-        Me.txtCode.TabIndex = 1
+        Me.txtCode.TabIndex = 0
         Me.txtCode.Text = "IMD 00001"
         '
         'txtDescription
@@ -77,7 +77,7 @@ Partial Class frmIMD
         Me.txtDescription.Location = New System.Drawing.Point(157, 27)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(247, 21)
-        Me.txtDescription.TabIndex = 3
+        Me.txtDescription.TabIndex = 1
         Me.txtDescription.Text = "Item Master Data 0001"
         '
         'Label2
@@ -111,11 +111,13 @@ Partial Class frmIMD
         'chkInv
         '
         Me.chkInv.AutoSize = True
+        Me.chkInv.Checked = True
+        Me.chkInv.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkInv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkInv.Location = New System.Drawing.Point(361, 82)
         Me.chkInv.Name = "chkInv"
         Me.chkInv.Size = New System.Drawing.Size(112, 17)
-        Me.chkInv.TabIndex = 9
+        Me.chkInv.TabIndex = 11
         Me.chkInv.Text = "INVENTORIABLE"
         Me.chkInv.UseVisualStyleBackColor = True
         '
@@ -125,7 +127,7 @@ Partial Class frmIMD
         Me.txtPrice.Location = New System.Drawing.Point(120, 78)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(91, 21)
-        Me.txtPrice.TabIndex = 8
+        Me.txtPrice.TabIndex = 5
         Me.txtPrice.Text = "100.00"
         '
         'Label6
@@ -144,7 +146,7 @@ Partial Class frmIMD
         Me.txtUoM.Location = New System.Drawing.Point(9, 78)
         Me.txtUoM.Name = "txtUoM"
         Me.txtUoM.Size = New System.Drawing.Size(91, 21)
-        Me.txtUoM.TabIndex = 6
+        Me.txtUoM.TabIndex = 4
         Me.txtUoM.Text = "PCS"
         '
         'Label5
@@ -164,7 +166,7 @@ Partial Class frmIMD
         Me.cboSubCat.Location = New System.Drawing.Point(197, 34)
         Me.cboSubCat.Name = "cboSubCat"
         Me.cboSubCat.Size = New System.Drawing.Size(185, 21)
-        Me.cboSubCat.TabIndex = 4
+        Me.cboSubCat.TabIndex = 3
         Me.cboSubCat.Text = "Sub - Category 0001"
         '
         'Label4
@@ -204,7 +206,7 @@ Partial Class frmIMD
         Me.chkHold.Location = New System.Drawing.Point(410, 31)
         Me.chkHold.Name = "chkHold"
         Me.chkHold.Size = New System.Drawing.Size(75, 17)
-        Me.chkHold.TabIndex = 5
+        Me.chkHold.TabIndex = 10
         Me.chkHold.Text = "ON HOLD"
         Me.chkHold.UseVisualStyleBackColor = True
         '
@@ -228,7 +230,7 @@ Partial Class frmIMD
         Me.txtDev.Location = New System.Drawing.Point(120, 34)
         Me.txtDev.Name = "txtDev"
         Me.txtDev.Size = New System.Drawing.Size(71, 21)
-        Me.txtDev.TabIndex = 11
+        Me.txtDev.TabIndex = 8
         Me.txtDev.Text = "3"
         '
         'Label8
@@ -244,11 +246,13 @@ Partial Class frmIMD
         'chkSales
         '
         Me.chkSales.AutoSize = True
+        Me.chkSales.Checked = True
+        Me.chkSales.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkSales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkSales.Location = New System.Drawing.Point(361, 19)
         Me.chkSales.Name = "chkSales"
         Me.chkSales.Size = New System.Drawing.Size(53, 17)
-        Me.chkSales.TabIndex = 9
+        Me.chkSales.TabIndex = 12
         Me.chkSales.Text = "SALE"
         Me.chkSales.UseVisualStyleBackColor = True
         '
@@ -258,7 +262,7 @@ Partial Class frmIMD
         Me.txtSale.Location = New System.Drawing.Point(9, 34)
         Me.txtSale.Name = "txtSale"
         Me.txtSale.Size = New System.Drawing.Size(91, 21)
-        Me.txtSale.TabIndex = 8
+        Me.txtSale.TabIndex = 7
         Me.txtSale.Text = "100.00"
         '
         'Label7
@@ -278,7 +282,7 @@ Partial Class frmIMD
         Me.txtRemarks.Multiline = True
         Me.txtRemarks.Name = "txtRemarks"
         Me.txtRemarks.Size = New System.Drawing.Size(239, 70)
-        Me.txtRemarks.TabIndex = 8
+        Me.txtRemarks.TabIndex = 9
         Me.txtRemarks.Text = resources.GetString("txtRemarks.Text")
         '
         'Label9
@@ -297,7 +301,7 @@ Partial Class frmIMD
         Me.btnSave.Location = New System.Drawing.Point(410, 267)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 36)
-        Me.btnSave.TabIndex = 9
+        Me.btnSave.TabIndex = 13
         Me.btnSave.Text = "&Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
@@ -307,7 +311,7 @@ Partial Class frmIMD
         Me.btnCancel.Location = New System.Drawing.Point(410, 309)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 36)
-        Me.btnCancel.TabIndex = 10
+        Me.btnCancel.TabIndex = 14
         Me.btnCancel.Text = "&Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
