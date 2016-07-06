@@ -22,7 +22,7 @@ Partial Class frmPLU
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"CEL 00003", "SAMSUNG J1", "CELLPHONE", "5"}, -1)
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"CEL 00003", "SAMSUNG J1", "CELLPHONE", "5"}, -1)
         Me.txtCode = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lvItem = New System.Windows.Forms.ListView()
@@ -31,8 +31,8 @@ Partial Class frmPLU
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSearch = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnSelect = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtCode
@@ -60,7 +60,7 @@ Partial Class frmPLU
         Me.lvItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvItem.FullRowSelect = True
         Me.lvItem.GridLines = True
-        Me.lvItem.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
+        Me.lvItem.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem2})
         Me.lvItem.Location = New System.Drawing.Point(12, 46)
         Me.lvItem.Name = "lvItem"
         Me.lvItem.Size = New System.Drawing.Size(620, 302)
@@ -85,7 +85,7 @@ Partial Class frmPLU
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "on Hand"
+        Me.ColumnHeader4.Text = "Stocks"
         Me.ColumnHeader4.Width = 72
         '
         'btnSearch
@@ -98,38 +98,39 @@ Partial Class frmPLU
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnCancel
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(557, 354)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 33)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "&Cancel"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Location = New System.Drawing.Point(557, 354)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 33)
+        Me.btnCancel.TabIndex = 6
+        Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnSelect
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(476, 354)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 33)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "&Select"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnSelect.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelect.Location = New System.Drawing.Point(476, 354)
+        Me.btnSelect.Name = "btnSelect"
+        Me.btnSelect.Size = New System.Drawing.Size(75, 33)
+        Me.btnSelect.TabIndex = 7
+        Me.btnSelect.Text = "&Select"
+        Me.btnSelect.UseVisualStyleBackColor = True
         '
         'frmPLU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(645, 396)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnSelect)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.lvItem)
         Me.Controls.Add(Me.txtCode)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmPLU"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Item Lookup"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -143,6 +144,6 @@ Partial Class frmPLU
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents btnSearch As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btnCancel As System.Windows.Forms.Button
+    Friend WithEvents btnSelect As System.Windows.Forms.Button
 End Class

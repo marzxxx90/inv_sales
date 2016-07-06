@@ -43,10 +43,12 @@
 
     Private Sub Load_asCash()
         lblMode.Text = "CASH"
+        TransactionMode = TransType.Cash
     End Sub
 
     Private Sub Load_asCheck()
         lblMode.Text = "CHECK"
+        TransactionMode = TransType.Check
     End Sub
 
     Private Function Display_Total(ByVal tot As Double) As Double
@@ -59,5 +61,10 @@
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearch.Click
+        frmPLU.Show()
+        frmPLU.From_Sales()
     End Sub
 End Class

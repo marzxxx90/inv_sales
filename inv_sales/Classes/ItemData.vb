@@ -150,6 +150,16 @@
             Return _itemQty * _unitPrice
         End Get
     End Property
+
+    Private _onHand As Double
+    Public Property onHand() As Double
+        Get
+            Return _onHand
+        End Get
+        Set(ByVal value As Double)
+            _onHand = value
+        End Set
+    End Property
 #End Region
 
 #Region "Procedures and Functions"
@@ -219,6 +229,35 @@
             _isInv = IIf(.Item("ISINV") = 1, True, False)
             _onHold = IIf(.Item("ONHOLD") = 1, True, False)
             _remarks = .Item("COMMENTS")
+
+            _onHand = getOnHand()
+        End With
+    End Sub
+
+    Private Function getOnHand() As Double
+        Dim mySql As String = "SELECT * FROM ITEMMASTER WHERE ITEMID = " & _itemID
+        Dim ds As DataSet = LoadSQL(mySql)
+
+        Return ds.Tables(0).Rows(0).Item("ONHAND")
+    End Function
+
+    Public Sub LoadReader_Item(ByVal rd As IDataReader)
+        With rd
+            _itemID = .Item("ITEMID")
+            _ItemCode = .Item("ITEMCODE")
+            _Description = .Item("DESCRIPTION")
+            _category = .Item("CATEGORIES")
+            _subCategory = .Item("SUBCAT")
+            _uom = .Item("UOM")
+            _unitPrice = .Item("UNITPRICE")
+            _salePrice = .Item("SALEPRICE")
+            _minimumDeviation = .Item("MINDEV")
+            _isSale = IIf(.Item("ISSALE") = 1, True, False)
+            _isInv = IIf(.Item("ISINV") = 1, True, False)
+            _onHold = IIf(.Item("ONHOLD") = 1, True, False)
+            _remarks = .Item("COMMENTS")
+
+            _onHand = getOnHand()
         End With
     End Sub
 #End Region

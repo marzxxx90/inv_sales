@@ -124,6 +124,7 @@
     </Compile>
     <Compile Include="Helper\Seeder.vb" />
     <Compile Include="Modules\database.vb" />
+    <Compile Include="Modules\language.vb" />
     <Compile Include="Modules\mod_system.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
