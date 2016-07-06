@@ -1,6 +1,9 @@
 ﻿Module Seeder
 
     Friend Sub ItemMasterData()
+        Dim mySql As String = "DELETE FROM ITEMMASTER WHERE ITEMID > 0"
+        RunCommand(mySql) 'Empty the database
+
         Dim seed As New ItemData
         With seed
             .ItemCode = "CEL 00001"

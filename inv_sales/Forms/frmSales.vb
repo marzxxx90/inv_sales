@@ -6,7 +6,8 @@
     End Enum
 
     Friend TransactionMode As TransType
-    Friend BoughtItems As CollectionItemData
+    Friend ht_BroughtItems As New Hashtable
+    Friend BroughtTotal As Double
 
     Private Sub frmSales_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Seeder.ItemMasterData()
@@ -16,9 +17,19 @@
     End Sub
 
 #Region "Function"
-    Friend Sub AddItem(ByVal itm As ItemData)
-        Dim lv As ListViewItem = lvSale.Items
+    Friend Sub AddItem(ByVal itm As ItemData, ByVal qty As Double)
+        Dim ItemAmount As Double
 
+        Dim lv As ListViewItem = lvSale.Items.Add(itm.ItemCode)
+        lv.SubItems.Add(itm.Description)
+        lv.SubItems.Add(qty)
+        lv.SubItems.Add(itm.SalePrice)
+        ItemAmount = (itm.SalePrice * qty)
+        lv.SubItems.Add(ItemAmount.ToString("#,#00.00"))
+        ht_BroughtItems.Add(itm.ItemCode, ItemAmount)
+
+        BroughtTotal += ItemAmount
+        Display_Total(BroughtTotal)
     End Sub
 #End Region
 
