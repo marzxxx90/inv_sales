@@ -122,6 +122,7 @@
     <Compile Include="Forms\frmSales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Helper\Seeder.vb" />
     <Compile Include="Modules\database.vb" />
     <Compile Include="Modules\mod_system.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
