@@ -123,6 +123,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Helper\Seeder.vb" />
+    <Compile Include="Modules\configuration.vb" />
     <Compile Include="Modules\database.vb" />
     <Compile Include="Modules\language.vb" />
     <Compile Include="Modules\mod_system.vb" />

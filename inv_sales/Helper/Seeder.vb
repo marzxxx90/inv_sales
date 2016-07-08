@@ -37,6 +37,23 @@
 
             .Save_ItemData()
         End With
+
+        seed = New ItemData
+        With seed
+            .ItemCode = "BAT 00002"
+            .Description = "BLC 510"
+            .UnitPrice = 50
+            .SalePrice = 150
+            .Category = "BATTERY"
+            '.SubCategory = "CELLPHONE"
+            .UnitOfMeasure = "PCS"
+            .MinimumDeviation = 13
+            .isSaleable = True
+            .isInventoriable = True
+            .Remarks = "From seed module"
+
+            .Save_ItemData()
+        End With
     End Sub
 
 End Module

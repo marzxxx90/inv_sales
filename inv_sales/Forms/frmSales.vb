@@ -31,6 +31,11 @@
         BroughtTotal += ItemAmount
         Display_Total(BroughtTotal)
     End Sub
+
+    Friend Sub ClearSearch()
+        txtSearch.Text = ""
+        txtSearch.Focus()
+    End Sub
 #End Region
 
 #Region "GUI"
@@ -66,5 +71,31 @@
     Private Sub btnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearch.Click
         frmPLU.Show()
         frmPLU.From_Sales()
+
+        If txtSearch.Text.Length > 0 Then frmPLU.SearchSelect(txtSearch.Text)
+    End Sub
+
+    Private Sub txtSearch_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSearch.KeyPress
+        If Asc(e.KeyChar) = 13 Then btnSearch.PerformClick()
+    End Sub
+
+    Private Sub tsbIMD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbIMD.Click
+        frmIMD.Show()
+    End Sub
+
+    Private Sub tsbPLU_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbPLU.Click
+        frmPLU.Show()
+    End Sub
+
+    Private Sub tsbCustomer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbCustomer.Click
+        Dim defaultName As String = "One-Time Customer"
+        Dim promptName As String = InputBox("Customer's Name", "Customer", defaultName)
+
+        If promptName = "" Then lblCustomer.Text = defaultName : Exit Sub
+        lblCustomer.Text = promptName
+    End Sub
+
+    Private Sub lvSale_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles lvSale.KeyPress
+        Console.WriteLine(Asc(e.KeyChar))
     End Sub
 End Class

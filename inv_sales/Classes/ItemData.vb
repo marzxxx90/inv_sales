@@ -242,6 +242,8 @@
     End Function
 
     Public Sub LoadReader_Item(ByVal rd As IDataReader)
+        On Error Resume Next
+
         With rd
             _itemID = .Item("ITEMID")
             _ItemCode = .Item("ITEMCODE")
