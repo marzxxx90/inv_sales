@@ -42,7 +42,6 @@ Partial Class frmPLU
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(469, 21)
         Me.txtCode.TabIndex = 3
-        Me.txtCode.Text = "Description"
         '
         'Label1
         '

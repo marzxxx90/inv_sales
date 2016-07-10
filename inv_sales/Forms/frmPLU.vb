@@ -15,7 +15,6 @@
 
     Private Sub frmPLU_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ClearField()
-        Load_PLU()
     End Sub
 
     Private Sub ClearFields()
@@ -23,9 +22,10 @@
         lvItem.Items.Clear()
     End Sub
 
-    Private Sub Load_PLU()
+    Friend Sub Load_PLU()
         Dim mySql As String = "SELECT * FROM ITEMMASTER WHERE onHold = 0 ORDER BY ITEMCODE ASC"
 
+        If Not txtCode.Text = "" Then Exit Sub
         dbReaderOpen()
         Dim dsR = LoadSQL_byDataReader(mySql)
         While dsR.Read
@@ -83,21 +83,27 @@
         lvItem.Items.Clear()
         queued_IMD.Clear()
 
-        For Each dr As DataRow In ds.Tables(0).Rows
+        dbReaderOpen()
 
-            Dim foundItem As New ItemData
-            foundItem.Load_Item(dr("ITEMCODE"))
+        Dim dsR = LoadSQL_byDataReader(mySql)
+        While dsR.Read
+            Dim lv As ListViewItem = lvItem.Items.Add(dsR("ITEMCODE"))
+            lv.SubItems.Add(dsR("DESCRIPTION"))
+            lv.SubItems.Add(dsR("CATEGORIES"))
+            lv.SubItems.Add(dsR("ONHAND"))
+        End While
 
-            AddItem(foundItem)
-            queued_IMD.Add(foundItem)
-        Next
+        dbReaderClose()
     End Sub
 
     Private Sub btnSelect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSelect.Click
         Console.WriteLine(lvItem.SelectedItems(0).Index)
         Dim idx As Integer = lvItem.SelectedItems(0).Index
 
-        frmSales.AddItem(queued_IMD.Item(idx), qtyItm)
+        Dim selected_Itm As New ItemData
+        selected_Itm.Load_Item(lvItem.SelectedItems(0).Text)
+
+        frmSales.AddItem(selected_Itm, qtyItm)
         frmSales.ClearSearch()
         Me.Close()
     End Sub

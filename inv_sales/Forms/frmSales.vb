@@ -72,7 +72,9 @@
         frmPLU.Show()
         frmPLU.From_Sales()
 
-        If txtSearch.Text.Length > 0 Then frmPLU.SearchSelect(txtSearch.Text)
+        If txtSearch.Text.Length > 0 Then frmPLU.SearchSelect(txtSearch.Text) : Exit Sub
+
+        frmPLU.Load_PLU()
     End Sub
 
     Private Sub txtSearch_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSearch.KeyPress
