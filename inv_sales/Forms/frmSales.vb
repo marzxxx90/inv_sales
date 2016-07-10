@@ -10,7 +10,7 @@
     Friend BroughtTotal As Double
 
     Private Sub frmSales_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Seeder.ItemMasterData()
+        'Seeder.ItemMasterData()
 
         ClearField()
         txtSearch.Select()

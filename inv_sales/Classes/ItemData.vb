@@ -228,7 +228,7 @@
             _isSale = IIf(.Item("ISSALE") = 1, True, False)
             _isInv = IIf(.Item("ISINV") = 1, True, False)
             _onHold = IIf(.Item("ONHOLD") = 1, True, False)
-            _remarks = .Item("COMMENTS")
+            _remarks = IIf(IsDBNull(.Item("COMMENTS")), "", .Item("COMMENTS"))
 
             _onHand = getOnHand()
         End With

@@ -1,6 +1,6 @@
 ﻿Public Class frmPLU
 
-    Private qtyItm As Double = 0
+    Private qtyItm As Double = 1
     Private queued_IMD As New CollectionItemData
 
     Friend Sub From_Sales()
@@ -90,8 +90,6 @@
 
             AddItem(foundItem)
             queued_IMD.Add(foundItem)
-
-            Application.DoEvents()
         Next
     End Sub
 
@@ -112,5 +110,9 @@
         If Asc(e.KeyChar) = 13 Then
             btnSelect.PerformClick()
         End If
+    End Sub
+
+    Private Sub txtCode_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCode.KeyPress
+        If Asc(e.KeyChar) = 13 Then btnSearch.PerformClick()
     End Sub
 End Class
