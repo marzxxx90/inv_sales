@@ -73,6 +73,7 @@
 
     Private Sub btnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearch.Click
         Dim unsec_src As String = txtCode.Text
+
         Dim mySql As String = "SELECT * FROM ITEMMASTER "
         mySql &= String.Format("WHERE LOWER(ITEMCODE) LIKE '%{0}%' OR LOWER(DESCRIPTION) LIKE '%{0}%'", DreadKnight(unsec_src).ToLower)
 

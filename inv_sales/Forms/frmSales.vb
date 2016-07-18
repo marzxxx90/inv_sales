@@ -87,6 +87,7 @@
 
     Private Sub tsbPLU_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbPLU.Click
         frmPLU.Show()
+        frmPLU.Load_PLU()
     End Sub
 
     Private Sub tsbCustomer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbCustomer.Click
@@ -99,5 +100,13 @@
 
     Private Sub lvSale_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles lvSale.KeyPress
         Console.WriteLine(Asc(e.KeyChar))
+    End Sub
+
+    Private Sub tsbCheck_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbCheck.Click
+        Load_asCheck()
+    End Sub
+
+    Private Sub tsbCash_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbCash.Click
+        Load_asCash()
     End Sub
 End Class
