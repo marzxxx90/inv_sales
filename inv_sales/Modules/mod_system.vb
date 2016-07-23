@@ -19,7 +19,25 @@
     End Function
 
     Private Sub UpdateOption(ByVal key As String, ByVal value As String)
-        Dim MySql As String = "SELECT * FROM MAINTENANCE"
+        Dim isNew As Boolean = False
+        Dim MySql As String = String.Format("SELECT * FROM MAINTENANCE WHERE SYS_KEY = '{0}'", key)
+        Dim ds As DataSet = LoadSQL(MySql, "MAINTENANCE")
+
+        If ds.Tables(0).Rows.Count = 0 Then
+            Dim dsNewRow As DataRow : isNew = True
+            dsNewRow = ds.Tables(0).NewRow
+
+            With dsNewRow
+                .Item("SYS_KEY") = key
+                .Item("SYS_VALUE") = value
+                .Item("REMARKS") = "AUTOREMARKS"
+            End With
+            ds.Tables(0).Rows.Add(dsNewRow)
+        Else
+            ds.Tables(0).Rows(0).Item("SYS_VALUE") = value
+        End If
+
+        database.SaveEntry(ds, isNew)
     End Sub
 
     Public Function CommandPrompt(ByVal app As String, ByVal args As String) As String
@@ -40,7 +58,6 @@
 
         Return sOutput
     End Function
-
 
     ''' <summary>
     ''' Function use to input only numbers
