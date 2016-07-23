@@ -211,6 +211,8 @@
     End Sub
 
     Public Sub Load_Item(ByVal itemCode As String)
+        On Error Resume Next
+
         Dim mySql As String = String.Format("SELECT * FROM {1} WHERE ITEMCODE = '{0}'", itemCode, fillData)
         Dim ds As DataSet = LoadSQL(mySql)
 

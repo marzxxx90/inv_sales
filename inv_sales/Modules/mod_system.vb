@@ -5,16 +5,22 @@
     Public ADS_ESKIE As Boolean = True
 
     Public CurrentDate As Date = Now
-
-    Friend isAuthorized As Boolean = False
-    Public backupPath As String = "."
-
-    Friend advanceInterestDays As Integer = 30
-    Friend RepDep As Double = 0
-    Friend DollarRate As Double = 48
-    Friend RequirementLevel As Integer = 1
-    Friend dailyID As Integer = 1
 #End Region
+
+    Private Function GetOption(ByVal key As String) As String
+        Dim MySql As String = String.Format("SELECT * FROM MAINTENANCE WHERE SYS_KEY = '{0}'", key)
+        Dim ds As DataSet = LoadSQL(MySql)
+
+        If ds.Tables(0).Rows.Count = 0 Then
+            Return "N/A"
+        End If
+
+        Return ds.Tables(0).Rows(0).Item("SYS_VALUE")
+    End Function
+
+    Private Sub UpdateOption(ByVal key As String, ByVal value As String)
+        Dim MySql As String = "SELECT * FROM MAINTENANCE"
+    End Sub
 
     Public Function CommandPrompt(ByVal app As String, ByVal args As String) As String
         Dim oProcess As New Process()

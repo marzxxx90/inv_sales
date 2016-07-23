@@ -65,6 +65,13 @@
         txtCode.Text = ""
         lvItem.Items.Clear()
     End Sub
+
+    Private Sub AutoSelect()
+        lvItem.Focus()
+        If lvItem.Items.Count = 0 Then Exit Sub
+
+        lvItem.Items(0).Selected = True
+    End Sub
 #End Region
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
@@ -95,9 +102,12 @@
         End While
 
         dbReaderClose()
+        AutoSelect()
     End Sub
 
     Private Sub btnSelect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSelect.Click
+        If lvItem.SelectedItems.Count = 0 Then Exit Sub
+
         Console.WriteLine(lvItem.SelectedItems(0).Index)
         Dim idx As Integer = lvItem.SelectedItems(0).Index
 
@@ -121,5 +131,13 @@
 
     Private Sub txtCode_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCode.KeyPress
         If Asc(e.KeyChar) = 13 Then btnSearch.PerformClick()
+    End Sub
+
+    Private Sub txtCode_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtCode.LostFocus
+        AutoSelect()
+    End Sub
+
+    Private Sub txtCode_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCode.TextChanged
+
     End Sub
 End Class

@@ -1,5 +1,9 @@
 ﻿Module Seeder
 
+    ''' <summary>
+    ''' Populating ItemMasterData
+    ''' </summary>
+    ''' <remarks></remarks>
     Friend Sub ItemMasterData()
         Dim mySql As String = "DELETE FROM ITEMMASTER WHERE ITEMID > 0"
         RunCommand(mySql) 'Empty the database

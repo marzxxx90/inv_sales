@@ -99,6 +99,7 @@ Partial Class frmPLU
         '
         'btnCancel
         '
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.Location = New System.Drawing.Point(557, 354)
         Me.btnCancel.Name = "btnCancel"
@@ -121,6 +122,7 @@ Partial Class frmPLU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(645, 396)
         Me.Controls.Add(Me.btnSelect)
         Me.Controls.Add(Me.btnCancel)
