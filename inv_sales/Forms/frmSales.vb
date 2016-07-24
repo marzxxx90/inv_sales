@@ -10,6 +10,9 @@
     Friend BroughtTotal As Double
 
     Private VAT As Double = 0
+    Private DOC_TYPE As Integer = 0 '0 - SALES
+    Private DOC_NOVAT As Double = 0
+    Private DOC_VATTOTAL As Double = 0
 
     Private Sub frmSales_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Seeder.ItemMasterData()
@@ -91,6 +94,7 @@
 
         Dim TOTALVAT As Double = final * VAT
         Display_NoVat(final)
+        DOC_VATTOTAL = TOTALVAT
 
         final += TOTALVAT
         lblTotal.Text = String.Format("Php {0:#,##0.00}", final)
@@ -100,9 +104,11 @@
 
     Private Function Display_NoVat(ByVal tot As Double) As Double
         lblNoVat.Text = String.Format("Php {0:#,##0.00}", tot)
+        DOC_NOVAT = tot
 
         Return tot
     End Function
+
 #End Region
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
@@ -164,6 +170,7 @@
 
     Private Sub btnPost_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPost.Click
         Dim docTotal As Double = 0
+        Dim mySql As String, fillData As String
 
         For Each ht As DictionaryEntry In ht_BroughtItems
             Console.WriteLine(String.Format("ItemCode:{0}|Description:{1}", ht.Key, ht.Value))
@@ -171,5 +178,59 @@
         Next
 
         Console.WriteLine("DocTotal: " & docTotal)
+
+        'Creating Document
+        mySql = "SELECT * FROM DOC ROWS 1"
+        fillData = "DOC"
+        Dim ORNUM As String = GetOption("ORNUM")
+        Dim unsec_Customer As String = lblCustomer.Text
+
+        Dim ds As DataSet = LoadSQL(mySql, fillData)
+        Dim dsNewRow As DataRow
+        dsNewRow = ds.Tables(fillData).NewRow
+
+        With dsNewRow
+            .Item("DOCTYPE") = DOC_TYPE
+            .Item("CODE") = String.Format("OR#{0:000000}", ORNUM)
+            .Item("CUSTOMER") = unsec_Customer
+            .Item("DOCDATE") = CurrentDate
+            .Item("NOVAT") = DOC_NOVAT
+            .Item("VATRATE") = VAT
+            .Item("VATTOTAL") = DOC_VATTOTAL
+            .Item("DOCTOTAL") = docTotal
+            .Item("USERID") = GetUserID()
+        End With
+        ds.Tables(fillData).Rows.Add(dsNewRow)
+
+        database.SaveEntry(ds)
+        Dim DOCID As Integer = 0
+
+        mySql = "SELECT * FROM DOC ORDER BY DOCID DESC ROWS 1"
+        ds = LoadSQL(mySql, fillData)
+        DOCID = ds.Tables(fillData).Rows(0).Item("DOCID")
+
+        Console.Write("Loading")
+        While DOCID = 0
+            Application.DoEvents()
+            Console.Write(".")
+        End While
+        Console.WriteLine()
+
+        'Creating DocumentLines
+        mySql = "SELECT * FROM DOCLINES ROWS 1"
+        fillData = "DOCLINES"
+        ds = LoadSQL(mySql, fillData)
+
+        For Each ht As DictionaryEntry In ht_BroughtItems
+            Dim itm As New ItemData
+            itm.Load_Item(ht.Key)
+
+            dsNewRow = ds.Tables(fillData).NewRow
+            With dsNewRow
+                .Item("DOCID") = DOCID
+                .Item("ITEMCODE") = itm.ItemCode
+                .Item("DESCRIPTION") = itm.Description
+            End With
+        Next
     End Sub
 End Class

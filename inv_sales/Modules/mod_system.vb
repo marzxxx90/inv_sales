@@ -7,6 +7,12 @@
     Public CurrentDate As Date = Now
 #End Region
 
+    Friend Function GetUserID() As Integer
+        'TODO: GET USERID
+
+        Return 0
+    End Function
+
     Private Function GetOption(ByVal key As String) As String
         Dim MySql As String = String.Format("SELECT * FROM MAINTENANCE WHERE SYS_KEY = '{0}'", key)
         Dim ds As DataSet = LoadSQL(MySql)
