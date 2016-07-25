@@ -273,4 +273,12 @@
         MsgBox("ITEM POSTED", MsgBoxStyle.Information)
         ClearField()
     End Sub
+
+
+    Private Sub lblCustomer_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblCustomer.DoubleClick
+        Dim mySql As String = "SELECT DISTINCT * FROM SALES_OR ORDER BY ITEMCODE ASC"
+
+        frmReport.Show()
+        frmReport.ReportInit(mySql, "SalesReport", "Reports\SalesReport.rdlc")
+    End Sub
 End Class
