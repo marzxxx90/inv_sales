@@ -33,6 +33,7 @@ Partial Class frmPLU
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSelect = New System.Windows.Forms.Button()
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'txtCode
@@ -55,7 +56,7 @@ Partial Class frmPLU
         '
         'lvItem
         '
-        Me.lvItem.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvItem.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
         Me.lvItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvItem.FullRowSelect = True
         Me.lvItem.GridLines = True
@@ -75,7 +76,7 @@ Partial Class frmPLU
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Description"
-        Me.ColumnHeader2.Width = 343
+        Me.ColumnHeader2.Width = 267
         '
         'ColumnHeader3
         '
@@ -118,6 +119,11 @@ Partial Class frmPLU
         Me.btnSelect.Text = "&Select"
         Me.btnSelect.UseVisualStyleBackColor = True
         '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "SalePrice"
+        Me.ColumnHeader5.Width = 72
+        '
         'frmPLU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -147,4 +153,5 @@ Partial Class frmPLU
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents btnSelect As System.Windows.Forms.Button
+    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
 End Class

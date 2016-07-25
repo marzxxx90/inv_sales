@@ -7,8 +7,8 @@
 
     Friend TransactionMode As TransType
     Friend ht_BroughtItems As New Hashtable
-    Friend BroughtTotal As Double
 
+    Private ORNUM As Double = GetOption("ORNUM")
     Private VAT As Double = 0
     Private DOC_TYPE As Integer = 0 '0 - SALES
     Private DOC_NOVAT As Double = 0
@@ -47,13 +47,30 @@
 
     Friend Sub AddItem(ByVal itm As ItemData, ByVal qty As Double)
         Dim ItemAmount As Double
+        Dim hasSelected As Boolean = False
 
-        Dim lv As ListViewItem = lvSale.Items.Add(itm.ItemCode)
-        lv.SubItems.Add(itm.Description)
-        lv.SubItems.Add(qty)
-        lv.SubItems.Add(itm.SalePrice.ToString("#,#00.00"))
-        ItemAmount = (itm.SalePrice * qty)
-        lv.SubItems.Add(ItemAmount.ToString("#,#00.00"))
+        For Each AddedItems As ListViewItem In lvSale.Items
+            If AddedItems.Text = itm.ItemCode Then
+                hasSelected = True
+                Exit For
+            End If
+        Next
+
+        If hasSelected Then
+            With lvSale.FindItemWithText(itm.ItemCode)
+                .SubItems(2).Text += qty
+                ItemAmount = (itm.SalePrice * qty)
+                .SubItems(4).Text += ItemAmount
+            End With
+        Else
+            'If NEW
+            Dim lv As ListViewItem = lvSale.Items.Add(itm.ItemCode)
+            lv.SubItems.Add(itm.Description)
+            lv.SubItems.Add(qty)
+            lv.SubItems.Add(itm.SalePrice.ToString("#,#00.00"))
+            ItemAmount = (itm.SalePrice * qty)
+            lv.SubItems.Add(ItemAmount.ToString("#,#00.00"))
+        End If
 
         If ht_BroughtItems.ContainsKey(itm.ItemCode) Then
             ht_BroughtItems.Item(itm.ItemCode) += qty
@@ -61,8 +78,8 @@
             ht_BroughtItems.Add(itm.ItemCode, qty)
         End If
 
-        BroughtTotal += ItemAmount
-        Display_Total(BroughtTotal)
+        DOC_TOTAL += ItemAmount
+        Display_Total(DOC_TOTAL)
     End Sub
 
     Friend Sub ClearSearch()
@@ -185,7 +202,6 @@
         'Creating Document
         mySql = "SELECT * FROM DOC ROWS 1"
         fillData = "DOC"
-        Dim ORNUM As String = GetOption("ORNUM")
         Dim unsec_Customer As String = lblCustomer.Text
 
         Dim ds As DataSet = LoadSQL(mySql, fillData)
@@ -242,10 +258,19 @@
             ds.Tables(fillData).Rows.Add(dsNewRow)
 
             database.SaveEntry(ds)
+
+            itm.onHand -= 1
+            itm.Save_ItemData()
         Next
+
+        ItemPosted()
+    End Sub
+
+    Private Sub ItemPosted()
+        ORNUM += 1 'INCREMENT ORNUMBER
+        UpdateOption("ORNUM", ORNUM)
 
         MsgBox("ITEM POSTED", MsgBoxStyle.Information)
         ClearField()
     End Sub
-
 End Class

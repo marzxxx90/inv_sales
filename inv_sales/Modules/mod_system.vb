@@ -13,7 +13,7 @@
         Return 0
     End Function
 
-    Private Function GetOption(ByVal key As String) As String
+    Friend Function GetOption(ByVal key As String) As String
         Dim MySql As String = String.Format("SELECT * FROM MAINTENANCE WHERE SYS_KEY = '{0}'", key)
         Dim ds As DataSet = LoadSQL(MySql)
 
@@ -24,7 +24,7 @@
         Return ds.Tables(0).Rows(0).Item("SYS_VALUE")
     End Function
 
-    Private Sub UpdateOption(ByVal key As String, ByVal value As String)
+    Friend Sub UpdateOption(ByVal key As String, ByVal value As String)
         Dim isNew As Boolean = False
         Dim MySql As String = String.Format("SELECT * FROM MAINTENANCE WHERE SYS_KEY = '{0}'", key)
         Dim ds As DataSet = LoadSQL(MySql, "MAINTENANCE")

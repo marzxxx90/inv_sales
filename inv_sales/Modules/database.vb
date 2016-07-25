@@ -138,49 +138,6 @@ Friend Module database
         ReaderCon.Close()
     End Sub
 
-    Friend Function GetOption(ByVal keys As String) As String
-        Dim mySql As String = "SELECT * FROM tblmaintenance WHERE opt_keys = '" & keys & "'"
-        Dim ret As String
-        Try
-            Dim ds As DataSet = LoadSQL(mySql)
-            ret = ds.Tables(0).Rows(0).Item("opt_values")
-        Catch ex As Exception
-            ret = 0
-        End Try
-
-        Return ret
-    End Function
-
-    Friend Sub UpdateOptions(ByVal key As String, ByVal value As String)
-        Dim mySql As String = "SELECT * FROM tblMaintenance WHERE opt_keys = '" & key & "'"
-        Dim fillData As String = "tblMaintenance"
-        Dim ds As DataSet = LoadSQL(mySql, fillData)
-
-        If ds.Tables(fillData).Rows.Count = 0 Then
-            Dim dsNewRow As DataRow
-            dsNewRow = ds.Tables(fillData).NewRow
-            With dsNewRow
-                .Item("opt_keys") = key
-                .Item("opt_values") = value
-            End With
-            ds.Tables(fillData).Rows.Add(dsNewRow)
-            SaveEntry(ds)
-        Else
-            ds.Tables(0).Rows(0).Item("opt_values") = value
-            SaveEntry(ds, False)
-        End If
-
-        If key = "RevolvingFund" Then
-            mySql = "SELECT * FROM TBLCASH WHERE TRANSNAME = 'Revolving Fund'"
-            fillData = "tblCash"
-
-            ds = LoadSQL(mySql, fillData)
-            ds.Tables(fillData).Rows(0).Item("SAPACCOUNT") = value
-            SaveEntry(ds, False)
-        End If
-        Console.WriteLine("Option updated. " & key)
-    End Sub
-
     Friend Sub RunCommand(ByVal sql As String)
         conStr = "DRIVER=Firebird/InterBase(r) driver;User=" & fbUser & ";Password=" & fbPass & ";Database=" & dbName & ";"
         con = New OdbcConnection(conStr)

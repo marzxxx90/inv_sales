@@ -59,6 +59,7 @@
         lv.SubItems.Add(itm.Description)
         lv.SubItems.Add(itm.Category)
         lv.SubItems.Add(itm.onHand)
+        lv.SubItems.Add(itm.SalePrice)
     End Sub
 
     Private Sub ClearField()
@@ -95,10 +96,11 @@
 
         Dim dsR = LoadSQL_byDataReader(mySql)
         While dsR.Read
-            Dim lv As ListViewItem = lvItem.Items.Add(dsR("ITEMCODE"))
-            lv.SubItems.Add(dsR("DESCRIPTION"))
-            lv.SubItems.Add(dsR("CATEGORIES"))
-            lv.SubItems.Add(dsR("ONHAND"))
+
+            Dim tmpItm As New ItemData
+            tmpItm.LoadReader_Item(dsR)
+            AddItem(tmpItm)
+
         End While
 
         dbReaderClose()

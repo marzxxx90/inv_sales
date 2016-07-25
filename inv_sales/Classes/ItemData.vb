@@ -3,6 +3,11 @@
     Private mySql As String
     Private fillData As String = "ItemMaster"
 
+    Enum InventoryItem As Integer
+        Deduct = 0
+        Add = 1
+    End Enum
+
 #Region "Properties"
     Private _itemID As Integer
     Public Property ItemID() As Integer
@@ -185,6 +190,7 @@
                 .Item("isSale") = IIf(isSaleable, 1, 0)
                 .Item("isInv") = IIf(isInventoriable, 1, 0)
                 .Item("onHold") = IIf(onHold, 1, 0)
+                .Item("onHand") = 0
                 .Item("Comments") = Remarks
             End With
             ds.Tables(fillData).Rows.Add(dsNewRow)
@@ -201,6 +207,7 @@
                 .Item("isSale") = IIf(isSaleable, 1, 0)
                 .Item("isInv") = IIf(isInventoriable, 1, 0)
                 .Item("onHold") = IIf(onHold, 1, 0)
+                .Item("onHand") = _onHand
                 .Item("Comments") = Remarks
             End With
 
