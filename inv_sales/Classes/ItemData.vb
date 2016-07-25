@@ -27,7 +27,7 @@
     Private _Description As String
     Public Property Description() As String
         Get
-            Return _Description
+            Return _Description.Trim
         End Get
         Set(ByVal value As String)
             _Description = value
