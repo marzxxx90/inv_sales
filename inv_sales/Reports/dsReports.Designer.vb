@@ -313,6 +313,8 @@ Partial Public Class dsReports
 
         Private columnRowTotal As Global.System.Data.DataColumn
 
+        Private columnMOP As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -469,6 +471,14 @@ Partial Public Class dsReports
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MOPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMOP
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -505,9 +515,25 @@ Partial Public Class dsReports
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddSalesReportRow(ByVal DocID As String, ByVal Code As String, ByVal DocDate As String, ByVal Customer As String, ByVal NoVat As String, ByVal VatRate As String, ByVal VatTotal As String, ByVal DocTotal As String, ByVal ItemCode As String, ByVal Description As String, ByVal Qty As String, ByVal UnitPrice As String, ByVal SalePrice As String, ByVal UoM As String, ByVal RowTotal As String) As SalesReportRow
+        Public Overloads Function AddSalesReportRow( _
+                    ByVal DocID As String, _
+                    ByVal Code As String, _
+                    ByVal DocDate As String, _
+                    ByVal Customer As String, _
+                    ByVal NoVat As String, _
+                    ByVal VatRate As String, _
+                    ByVal VatTotal As String, _
+                    ByVal DocTotal As String, _
+                    ByVal ItemCode As String, _
+                    ByVal Description As String, _
+                    ByVal Qty As String, _
+                    ByVal UnitPrice As String, _
+                    ByVal SalePrice As String, _
+                    ByVal UoM As String, _
+                    ByVal RowTotal As String, _
+                    ByVal MOP As String) As SalesReportRow
             Dim rowSalesReportRow As SalesReportRow = CType(Me.NewRow, SalesReportRow)
-            Dim columnValuesArray() As Object = New Object() {DocID, Code, DocDate, Customer, NoVat, VatRate, VatTotal, DocTotal, ItemCode, Description, Qty, UnitPrice, SalePrice, UoM, RowTotal}
+            Dim columnValuesArray() As Object = New Object() {DocID, Code, DocDate, Customer, NoVat, VatRate, VatTotal, DocTotal, ItemCode, Description, Qty, UnitPrice, SalePrice, UoM, RowTotal, MOP}
             rowSalesReportRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSalesReportRow)
             Return rowSalesReportRow
@@ -545,6 +571,7 @@ Partial Public Class dsReports
             Me.columnSalePrice = MyBase.Columns("SalePrice")
             Me.columnUoM = MyBase.Columns("UoM")
             Me.columnRowTotal = MyBase.Columns("RowTotal")
+            Me.columnMOP = MyBase.Columns("MOP")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -580,6 +607,8 @@ Partial Public Class dsReports
             MyBase.Columns.Add(Me.columnUoM)
             Me.columnRowTotal = New Global.System.Data.DataColumn("RowTotal", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRowTotal)
+            Me.columnMOP = New Global.System.Data.DataColumn("MOP", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMOP)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -951,6 +980,21 @@ Partial Public Class dsReports
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MOP() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableSalesReport.MOPColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MOP' in table 'SalesReport' is DBNull.", e)
+                End Try
+            End Get
+            Set(ByVal value As String)
+                Me(Me.tableSalesReport.MOPColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsDocIDNull() As Boolean
             Return Me.IsNull(Me.tableSalesReport.DocIDColumn)
         End Function
@@ -1127,6 +1171,18 @@ Partial Public Class dsReports
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetRowTotalNull()
             Me(Me.tableSalesReport.RowTotalColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMOPNull() As Boolean
+            Return Me.IsNull(Me.tableSalesReport.MOPColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMOPNull()
+            Me(Me.tableSalesReport.MOPColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 

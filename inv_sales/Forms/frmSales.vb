@@ -15,12 +15,6 @@
     Private DOC_VATTOTAL As Double = 0
     Private DOC_TOTAL As Double = 0
 
-    Private Sub frmSales_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            txtSearch.Focus()
-        End If
-    End Sub
-
     Private Sub frmSales_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Seeder.ItemMasterData()
 
@@ -92,6 +86,29 @@
         txtSearch.Text = ""
         txtSearch.Focus()
     End Sub
+
+    Private Sub ForcePosting()
+        If MsgBox("Do you want to POST?", MsgBoxStyle.YesNo + MsgBoxStyle.Information, "POSTING...") = vbYes Then
+            btnPost.PerformClick()
+        End If
+    End Sub
+
+    Private Sub Form_HotKeys(ByVal e As System.Windows.Forms.KeyEventArgs)
+        Select Case e.KeyCode
+            Case 112 'F1
+                frmIMD.Show()
+            Case 113 'F2
+                frmPLU.Show()
+            Case 114 'F3
+                tsbCustomer.PerformClick()
+            Case 116 'F5
+                tsbCash.PerformClick()
+            Case 117 'F6
+                tsbCheck.PerformClick()
+            Case 120 'F9
+                ForcePosting()
+        End Select
+    End Sub
 #End Region
 
 #Region "GUI"
@@ -149,6 +166,10 @@
         frmPLU.Load_PLU()
     End Sub
 
+    Private Sub txtSearch_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtSearch.KeyDown
+        Form_HotKeys(e)
+    End Sub
+
     Private Sub txtSearch_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSearch.KeyPress
         If Asc(e.KeyChar) = 13 Then btnSearch.PerformClick()
     End Sub
@@ -203,6 +224,8 @@
     End Sub
 
     Private Sub btnPost_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPost.Click
+        If lvSale.Items.Count = 0 Then Exit Sub
+
         Dim mySql As String, fillData As String
 
         'Creating Document
@@ -217,6 +240,7 @@
         With dsNewRow
             .Item("DOCTYPE") = DOC_TYPE
             .Item("CODE") = String.Format("OR#{0:000000}", ORNUM)
+            .Item("MOP") = GetModesOfPayment(TransactionMode)
             .Item("CUSTOMER") = unsec_Customer
             .Item("DOCDATE") = CurrentDate
             .Item("NOVAT") = DOC_NOVAT
@@ -272,6 +296,17 @@
         ItemPosted()
     End Sub
 
+    Private Function GetModesOfPayment(ByVal x As TransType)
+        Select Case x
+            Case TransType.Cash
+                Return "C"
+            Case TransType.Check
+                Return "Q"
+        End Select
+
+        Return "0"
+    End Function
+
     Private Sub ItemPosted()
         ORNUM += 1 'INCREMENT ORNUMBER
         UpdateOption("ORNUM", ORNUM)
@@ -294,5 +329,9 @@
 
     Private Sub tsbSalesReturn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbSalesReturn.Click
         MsgBox("FUNCTION UNDER CONSTRUCTION", MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub lblCustomer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblCustomer.Click
+
     End Sub
 End Class
