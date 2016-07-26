@@ -15,6 +15,12 @@
     Private DOC_VATTOTAL As Double = 0
     Private DOC_TOTAL As Double = 0
 
+    Private Sub frmSales_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            txtSearch.Focus()
+        End If
+    End Sub
+
     Private Sub frmSales_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Seeder.ItemMasterData()
 
@@ -280,5 +286,13 @@
 
         frmReport.Show()
         frmReport.ReportInit(mySql, "SalesReport", "Reports\SalesReport.rdlc")
+    End Sub
+
+    Private Sub tsbRefund_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbRefund.Click
+        MsgBox("FUNCTION UNDER CONSTRUCTION", MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub tsbSalesReturn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbSalesReturn.Click
+        MsgBox("FUNCTION UNDER CONSTRUCTION", MsgBoxStyle.Information)
     End Sub
 End Class

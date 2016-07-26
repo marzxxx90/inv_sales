@@ -22,7 +22,7 @@ Partial Class frmSales
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"GAD 0120", "SAMPLE GAD ITEMS", "3", "1,000", "3,000"}, -1)
+        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"GAD 0120", "SAMPLE GAD ITEMS", "3", "1,000", "3,000"}, -1)
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSales))
         Me.lvSale = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -45,8 +45,8 @@ Partial Class frmSales
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbCash = New System.Windows.Forms.ToolStripButton()
         Me.tsbCheck = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.tsbRefund = New System.Windows.Forms.ToolStripButton()
+        Me.tsbSalesReturn = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbReceipt = New System.Windows.Forms.ToolStripButton()
         Me.btnCancel = New System.Windows.Forms.Button()
@@ -64,7 +64,7 @@ Partial Class frmSales
         Me.lvSale.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvSale.FullRowSelect = True
         Me.lvSale.GridLines = True
-        Me.lvSale.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
+        Me.lvSale.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem5})
         Me.lvSale.Location = New System.Drawing.Point(12, 38)
         Me.lvSale.Name = "lvSale"
         Me.lvSale.Size = New System.Drawing.Size(482, 286)
@@ -126,7 +126,7 @@ Partial Class frmSales
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(12, 339)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 16)
+        Me.Label3.Size = New System.Drawing.Size(48, 16)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "ITEM:"
         '
@@ -177,7 +177,7 @@ Partial Class frmSales
         '
         'tsButton
         '
-        Me.tsButton.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbIMD, Me.tsbPLU, Me.ToolStripSeparator1, Me.tsbCustomer, Me.ToolStripSeparator2, Me.tsbCash, Me.tsbCheck, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripSeparator3, Me.tsbReceipt})
+        Me.tsButton.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbIMD, Me.tsbPLU, Me.ToolStripSeparator1, Me.tsbCustomer, Me.ToolStripSeparator2, Me.tsbCash, Me.tsbCheck, Me.tsbRefund, Me.tsbSalesReturn, Me.ToolStripSeparator3, Me.tsbReceipt})
         Me.tsButton.Location = New System.Drawing.Point(0, 0)
         Me.tsButton.Name = "tsButton"
         Me.tsButton.Size = New System.Drawing.Size(798, 25)
@@ -234,21 +234,21 @@ Partial Class frmSales
         Me.tsbCheck.Size = New System.Drawing.Size(65, 22)
         Me.tsbCheck.Text = "CHECK"
         '
-        'ToolStripButton1
+        'tsbRefund
         '
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(71, 22)
-        Me.ToolStripButton1.Text = "REFUND"
+        Me.tsbRefund.Image = CType(resources.GetObject("tsbRefund.Image"), System.Drawing.Image)
+        Me.tsbRefund.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbRefund.Name = "tsbRefund"
+        Me.tsbRefund.Size = New System.Drawing.Size(71, 22)
+        Me.tsbRefund.Text = "REFUND"
         '
-        'ToolStripButton2
+        'tsbSalesReturn
         '
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(112, 22)
-        Me.ToolStripButton2.Text = "SALES RETURNS"
+        Me.tsbSalesReturn.Image = CType(resources.GetObject("tsbSalesReturn.Image"), System.Drawing.Image)
+        Me.tsbSalesReturn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbSalesReturn.Name = "tsbSalesReturn"
+        Me.tsbSalesReturn.Size = New System.Drawing.Size(112, 22)
+        Me.tsbSalesReturn.Text = "SALES RETURNS"
         '
         'ToolStripSeparator3
         '
@@ -314,6 +314,7 @@ Partial Class frmSales
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lvSale)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(545, 411)
         Me.Name = "frmSales"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -349,7 +350,7 @@ Partial Class frmSales
     Friend WithEvents btnPost As System.Windows.Forms.Button
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents tsbReceipt As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbRefund As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbSalesReturn As System.Windows.Forms.ToolStripButton
     Friend WithEvents lblNoVat As System.Windows.Forms.Label
 End Class
