@@ -22,6 +22,14 @@
     End Sub
 
     Private Sub MaintenanceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MaintenanceToolStripMenuItem.Click
+        frmMaintenance.Show()
+    End Sub
 
+    Private Sub tmr_Closer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmr_Closer.Tick
+        tssCurrentDate.Text = Now.ToLongDateString & " " & Now.ToLongTimeString
+    End Sub
+
+    Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        frmSTART.ShowDialog()
     End Sub
 End Class

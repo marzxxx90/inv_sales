@@ -15,6 +15,8 @@
     Private DOC_VATTOTAL As Double = 0
     Private DOC_TOTAL As Double = 0
 
+    Private canTransact As Boolean = True
+
     Private Sub frmSales_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Seeder.ItemMasterData()
 
@@ -26,6 +28,19 @@
             lblNoVat.Visible = True
         Else
             lblNoVat.Visible = False
+        End If
+
+        CheckOR()
+    End Sub
+
+    Private Sub CheckOR()
+        Dim mySql As String = "SELECT * FROM DOC WHERE CODE = "
+        mySql &= String.Format("'OR#{0:000000}'", ORNUM)
+
+        Dim ds As DataSet = LoadSQL(mySql)
+        If ds.Tables(0).Rows.Count >= 1 Then
+            canTransact = False
+            MsgBox("OR NUMBER ALREADY EXISTED" + vbCrLf + "PLEASE BE ADVICED", MsgBoxStyle.Critical)
         End If
     End Sub
 
@@ -224,6 +239,9 @@
     End Sub
 
     Private Sub btnPost_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPost.Click
+        CheckOR()
+        If Not canTransact Then Exit Sub
+
         If lvSale.Items.Count = 0 Then Exit Sub
 
         Dim mySql As String, fillData As String
@@ -315,23 +333,11 @@
         ClearField()
     End Sub
 
-
-    Private Sub lblCustomer_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblCustomer.DoubleClick
-        Dim mySql As String = "SELECT DISTINCT * FROM SALES_OR ORDER BY ITEMCODE ASC"
-
-        frmReport.Show()
-        frmReport.ReportInit(mySql, "SalesReport", "Reports\SalesReport.rdlc")
-    End Sub
-
     Private Sub tsbRefund_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbRefund.Click
         MsgBox("FUNCTION UNDER CONSTRUCTION", MsgBoxStyle.Information)
     End Sub
 
     Private Sub tsbSalesReturn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbSalesReturn.Click
         MsgBox("FUNCTION UNDER CONSTRUCTION", MsgBoxStyle.Information)
-    End Sub
-
-    Private Sub lblCustomer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblCustomer.Click
-
     End Sub
 End Class

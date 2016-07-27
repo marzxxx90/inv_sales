@@ -131,6 +131,12 @@
     <Compile Include="Forms\frmSales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmSTART.Designer.vb">
+      <DependentUpon>frmSTART.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSTART.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helper\Seeder.vb" />
     <Compile Include="Modules\configuration.vb" />
     <Compile Include="Modules\database.vb" />
@@ -167,6 +173,12 @@
     <Compile Include="Reports\frmReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\qrySelectiveDate.Designer.vb">
+      <DependentUpon>qrySelectiveDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\qrySelectiveDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\frmInventoryOut.resx">
@@ -193,6 +205,9 @@
     <EmbeddedResource Include="Forms\frmSales.resx">
       <DependentUpon>frmSales.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSTART.resx">
+      <DependentUpon>frmSTART.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -201,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReport.resx">
       <DependentUpon>frmReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\qrySelectiveDate.resx">
+      <DependentUpon>qrySelectiveDate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\SalesReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
