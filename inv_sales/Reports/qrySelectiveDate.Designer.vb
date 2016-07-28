@@ -29,14 +29,14 @@ Partial Class qrySelectiveDate
         '
         'monSelect
         '
-        Me.monSelect.Location = New System.Drawing.Point(18, 18)
+        Me.monSelect.Location = New System.Drawing.Point(6, 6)
         Me.monSelect.Name = "monSelect"
         Me.monSelect.TabIndex = 0
         '
         'btnSelect
         '
         Me.btnSelect.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelect.Location = New System.Drawing.Point(158, 192)
+        Me.btnSelect.Location = New System.Drawing.Point(144, 173)
         Me.btnSelect.Name = "btnSelect"
         Me.btnSelect.Size = New System.Drawing.Size(87, 38)
         Me.btnSelect.TabIndex = 1
@@ -47,7 +47,7 @@ Partial Class qrySelectiveDate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(262, 242)
+        Me.ClientSize = New System.Drawing.Size(239, 215)
         Me.Controls.Add(Me.btnSelect)
         Me.Controls.Add(Me.monSelect)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

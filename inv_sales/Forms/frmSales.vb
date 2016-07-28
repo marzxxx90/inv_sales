@@ -103,9 +103,7 @@
     End Sub
 
     Private Sub ForcePosting()
-        If MsgBox("Do you want to POST?", MsgBoxStyle.YesNo + MsgBoxStyle.Information, "POSTING...") = vbYes Then
-            btnPost.PerformClick()
-        End If
+        btnPost.PerformClick()
     End Sub
 
     Private Sub Form_HotKeys(ByVal e As System.Windows.Forms.KeyEventArgs)
@@ -165,7 +163,6 @@
 
         Return tot
     End Function
-
 #End Region
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
@@ -239,6 +236,10 @@
     End Sub
 
     Private Sub btnPost_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPost.Click
+        If Not MsgBox("Do you want to POST?", MsgBoxStyle.YesNo + MsgBoxStyle.Information + vbDefaultButton2, "POSTING...") = vbYes Then
+            Exit Sub
+        End If
+
         CheckOR()
         If Not canTransact Then Exit Sub
 

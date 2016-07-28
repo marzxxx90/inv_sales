@@ -26,10 +26,16 @@
     End Sub
 
     Private Sub tmr_Closer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmr_Closer.Tick
-        tssCurrentDate.Text = Now.ToLongDateString & " " & Now.ToLongTimeString
+        tssCurrentDate.Text = CurrentDate.ToLongDateString & " " & Now.ToLongTimeString
     End Sub
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         frmSTART.ShowDialog()
     End Sub
+
+    Private Sub SalesReportToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SalesReportToolStripMenuItem.Click
+        qrySelectiveDate.ViewReport = qrySelectiveDate.ReportType.Sales
+        qrySelectiveDate.Show()
+    End Sub
+
 End Class
