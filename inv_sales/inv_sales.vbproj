@@ -52,6 +52,9 @@
     <ApplicationIcon>Inventory-Icon-01.png.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="eskey">
+      <HintPath>.\eskey.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -82,6 +85,7 @@
     <Compile Include="Classes\CollectionItemData.vb" />
     <Compile Include="Classes\InventoryChange.vb" />
     <Compile Include="Classes\ItemData.vb" />
+    <Compile Include="Classes\LicenseKey.vb" />
     <Compile Include="Forms\frmInventoryOut.Designer.vb">
       <DependentUpon>frmInventoryOut.vb</DependentUpon>
     </Compile>
@@ -216,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReport.resx">
       <DependentUpon>frmReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OfficialReceipt.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\qrySelectiveDate.resx">
       <DependentUpon>qrySelectiveDate.vb</DependentUpon>

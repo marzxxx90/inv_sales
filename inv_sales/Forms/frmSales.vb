@@ -313,6 +313,7 @@
         Next
 
         ItemPosted()
+        PrintOR(DOCID)
     End Sub
 
     Private Function GetModesOfPayment(ByVal x As TransType)
@@ -332,6 +333,21 @@
 
         MsgBox("ITEM POSTED", MsgBoxStyle.Information)
         ClearField()
+    End Sub
+
+    Private Sub PrintOR(ByVal docID As Integer)
+        Dim mySql As String = "SELECT * FROM SALES_OR WHERE DOCID = " & docID
+        Dim ds As DataSet = LoadSQL(mySql)
+
+        Dim dic As New Dictionary(Of String, String)
+        With ds.Tables(0).Rows(0)
+            dic.Add("txtORNum", .Item("CODE"))
+            dic.Add("txtPostingDate", .Item("DOCDATE"))
+            dic.Add("txtCustomer", .Item("CUSTOMER"))
+        End With
+
+        frmReport.ReportInit(mySql, "OR", "Reports\OfficialReceipt.rdlc", dic)
+        frmReport.Show()
     End Sub
 
     Private Sub tsbRefund_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbRefund.Click
