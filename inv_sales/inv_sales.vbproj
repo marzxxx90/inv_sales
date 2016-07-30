@@ -86,6 +86,7 @@
     <Compile Include="Classes\InventoryChange.vb" />
     <Compile Include="Classes\ItemData.vb" />
     <Compile Include="Classes\LicenseKey.vb" />
+    <Compile Include="Classes\Reporting.vb" />
     <Compile Include="Forms\frmInventoryOut.Designer.vb">
       <DependentUpon>frmInventoryOut.vb</DependentUpon>
     </Compile>
