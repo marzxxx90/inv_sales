@@ -149,6 +149,10 @@
         Return lastOfMonth
     End Function
 
+    Friend Sub UNDERCONSTRUCTION()
+        MsgBox("FUNCTION UNDER CONSTRUCTION", MsgBoxStyle.Information)
+    End Sub
+
 #Region "Log Module"
     Const LOG_FILE As String = "-log.txt"
     Private Sub CreateLog()

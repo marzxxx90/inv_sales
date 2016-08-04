@@ -351,10 +351,10 @@
     End Sub
 
     Private Sub tsbRefund_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbRefund.Click
-        MsgBox("FUNCTION UNDER CONSTRUCTION", MsgBoxStyle.Information)
+        UNDERCONSTRUCTION()
     End Sub
 
     Private Sub tsbSalesReturn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbSalesReturn.Click
-        MsgBox("FUNCTION UNDER CONSTRUCTION", MsgBoxStyle.Information)
+        UNDERCONSTRUCTION()
     End Sub
 End Class

@@ -116,6 +116,11 @@
         Dim selected_Itm As New ItemData
         selected_Itm.Load_Item(lvItem.SelectedItems(0).Text)
 
+        If selected_Itm.SalePrice = 0 Then
+            Dim customPrice As Double = InputBox("Enter Price", "Custom Price", 0)
+            selected_Itm.SalePrice = customPrice
+        End If
+
         frmSales.AddItem(selected_Itm, qtyItm)
         frmSales.ClearSearch()
         Me.Close()
@@ -139,7 +144,7 @@
         AutoSelect()
     End Sub
 
-    Private Sub txtCode_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCode.TextChanged
-
+    Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
+        UNDERCONSTRUCTION()
     End Sub
 End Class

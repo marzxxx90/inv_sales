@@ -22,6 +22,10 @@
         Load_Categories()
     End Sub
 
+    Private Sub Load_ItemData(ByVal itm As ItemData)
+
+    End Sub
+
     Private Sub Save_ItemMasterData()
         Dim newItem As New ItemData
 
@@ -48,7 +52,7 @@
         Catch ex As Exception
             MsgBox("Failed to SAVE the ITEM", MsgBoxStyle.Critical)
         End Try
-        
+
     End Sub
 
     Private Sub Load_Categories()

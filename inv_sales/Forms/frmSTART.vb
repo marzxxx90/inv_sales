@@ -1,7 +1,7 @@
 ﻿Public Class frmSTART
 
     Private isClosing As Boolean = True
-    Private EXPIRELIMIT As Date = #8/2/2016#
+    Private EXPIRELIMIT As Date = #8/31/2016#
     Private DEMOMSG As String = "THIS IS ONLY A DEMO" + vbCrLf + "IT WILL EXPIRED WITHIN {0} {1}"
 
     Private Sub btnStart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStart.Click

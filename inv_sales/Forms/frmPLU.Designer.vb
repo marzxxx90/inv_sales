@@ -22,7 +22,7 @@ Partial Class frmPLU
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"CEL 00003", "SAMSUNG J1", "CELLPHONE", "5"}, -1)
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"CEL 00003", "SAMSUNG J1", "CELLPHONE", "5"}, -1)
         Me.txtCode = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lvItem = New System.Windows.Forms.ListView()
@@ -30,10 +30,11 @@ Partial Class frmPLU
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSelect = New System.Windows.Forms.Button()
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnEdit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtCode
@@ -60,7 +61,7 @@ Partial Class frmPLU
         Me.lvItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvItem.FullRowSelect = True
         Me.lvItem.GridLines = True
-        Me.lvItem.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
+        Me.lvItem.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem2})
         Me.lvItem.Location = New System.Drawing.Point(12, 46)
         Me.lvItem.Name = "lvItem"
         Me.lvItem.Size = New System.Drawing.Size(620, 302)
@@ -87,6 +88,11 @@ Partial Class frmPLU
         '
         Me.ColumnHeader4.Text = "Stocks"
         Me.ColumnHeader4.Width = 72
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "SalePrice"
+        Me.ColumnHeader5.Width = 72
         '
         'btnSearch
         '
@@ -119,10 +125,16 @@ Partial Class frmPLU
         Me.btnSelect.Text = "&Select"
         Me.btnSelect.UseVisualStyleBackColor = True
         '
-        'ColumnHeader5
+        'btnEdit
         '
-        Me.ColumnHeader5.Text = "SalePrice"
-        Me.ColumnHeader5.Width = 72
+        Me.btnEdit.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.Location = New System.Drawing.Point(12, 354)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(75, 33)
+        Me.btnEdit.TabIndex = 8
+        Me.btnEdit.Text = "&Edit"
+        Me.btnEdit.UseVisualStyleBackColor = True
         '
         'frmPLU
         '
@@ -130,6 +142,7 @@ Partial Class frmPLU
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(645, 396)
+        Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnSelect)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSearch)
@@ -154,4 +167,5 @@ Partial Class frmPLU
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents btnSelect As System.Windows.Forms.Button
     Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents btnEdit As System.Windows.Forms.Button
 End Class
