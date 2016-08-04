@@ -22,12 +22,31 @@
         lvItem.Items.Clear()
     End Sub
 
+#Region "ProgressBar"
+    Private Sub PG_Init(ByVal st As Boolean, Optional ByVal max As Integer = 0)
+        pb_itm.Visible = st
+        pb_itm.Value = 0
+        pb_itm.Maximum = max
+
+        Me.Enabled = Not st
+    End Sub
+
+    Private Sub pgValue(ByVal val As Integer)
+        pb_itm.Value = val
+    End Sub
+#End Region
+
     Friend Sub Load_PLU()
+        Dim quickLoader As Integer = 0
         Dim mySql As String = "SELECT * FROM ITEMMASTER WHERE onHold = 0 ORDER BY ITEMCODE ASC"
+
+        Dim ds As DataSet = LoadSQL("SELECT COUNT(*) FROM ITEMMASTER WHERE onHold = 0")
+        Dim MaxResult As Integer = ds.Tables(0).Rows(0).Item(0)
 
         If Not txtCode.Text = "" Then Exit Sub
         dbReaderOpen()
         Dim dsR = LoadSQL_byDataReader(mySql)
+        PG_Init(True, MaxResult)
         While dsR.Read
 
             Dim itmReader As New ItemData
@@ -35,8 +54,13 @@
             queued_IMD.Add(itmReader)
             AddItem(itmReader)
 
+            quickLoader += 1
+            pgValue(quickLoader)
+            If quickLoader Mod 10 = 0 Then Application.DoEvents()
         End While
         dbReaderClose()
+
+        PG_Init(False)
     End Sub
 
     Friend Sub SearchSelect(ByVal unsecured_String As String)
@@ -58,6 +82,7 @@
         Dim lv As ListViewItem = lvItem.Items.Add(itm.ItemCode)
         lv.SubItems.Add(itm.Description)
         lv.SubItems.Add(itm.Category)
+        lv.SubItems.Add(itm.UnitOfMeasure)
         lv.SubItems.Add(itm.onHand)
         lv.SubItems.Add(itm.SalePrice)
     End Sub

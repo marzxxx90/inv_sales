@@ -114,7 +114,7 @@ Public Class frmSales
             Case 112 'F1
                 frmIMD.Show()
             Case 113 'F2
-                frmPLU.Show()
+                tsbPLU.PerformClick()
             Case 114 'F3
                 tsbCustomer.PerformClick()
             Case 116 'F5
@@ -403,4 +403,8 @@ Public Class frmSales
             Return False
         End Try
     End Function
+
+    Private Sub txtSearch_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSearch.TextChanged
+
+    End Sub
 End Class

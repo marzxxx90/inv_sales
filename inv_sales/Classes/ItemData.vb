@@ -238,17 +238,9 @@
             _isInv = IIf(.Item("ISINV") = 1, True, False)
             _onHold = IIf(.Item("ONHOLD") = 1, True, False)
             _remarks = IIf(IsDBNull(.Item("COMMENTS")), "", .Item("COMMENTS"))
-
-            _onHand = getOnHand()
+            _onHand = .Item("ONHAND")
         End With
     End Sub
-
-    Private Function getOnHand() As Double
-        Dim mySql As String = "SELECT * FROM ITEMMASTER WHERE ITEMID = " & _itemID
-        Dim ds As DataSet = LoadSQL(mySql)
-
-        Return ds.Tables(0).Rows(0).Item("ONHAND")
-    End Function
 
     Public Sub LoadReader_Item(ByVal rd As IDataReader)
         On Error Resume Next
@@ -267,8 +259,7 @@
             _isInv = IIf(.Item("ISINV") = 1, True, False)
             _onHold = IIf(.Item("ONHOLD") = 1, True, False)
             _remarks = .Item("COMMENTS")
-
-            _onHand = getOnHand()
+            _onHand = .Item("ONHAND")
         End With
     End Sub
 #End Region
