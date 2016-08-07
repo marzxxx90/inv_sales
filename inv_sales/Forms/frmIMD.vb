@@ -1,5 +1,7 @@
 ﻿Public Class frmIMD
 
+    Private Selected_Item As ItemData
+
     Private Sub frmIMD_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ClearFields()
     End Sub
@@ -22,11 +24,49 @@
         Load_Categories()
     End Sub
 
-    Private Sub Load_ItemData(ByVal itm As ItemData)
+    Friend Sub Load_ItemData(ByVal itm As ItemData)
+        ClearFields()
+        txtCode.Enabled = False 'Disable Item Code
 
+        txtCode.Text = itm.ItemCode
+        txtDescription.Text = itm.Description
+        chkHold.Checked = itm.onHold
+        cboCat.Text = itm.Category
+        cboSubCat.Text = itm.SubCategory
+        txtUoM.Text = itm.UnitOfMeasure
+        txtPrice.Text = itm.UnitPrice.ToString("#,#00.00")
+        chkInv.Checked = itm.isInventoriable
+        txtSale.Text = itm.SalePrice.ToString("#,#00.00")
+        txtDev.Text = itm.MinimumDeviation
+        chkSales.Checked = itm.isSaleable
+        txtRemarks.Text = itm.Remarks
+
+        Selected_Item = itm
     End Sub
 
     Private Sub Save_ItemMasterData()
+        If Not Selected_Item Is Nothing Then
+            With Selected_Item
+                .Description = txtDescription.Text
+                .onHold = chkHold.Checked
+                .Category = cboCat.Text
+                .SubCategory = cboSubCat.Text
+                .UnitOfMeasure = txtUoM.Text
+                .UnitPrice = txtPrice.Text
+                .isInventoriable = chkInv.Checked
+                .SalePrice = txtSale.Text
+                .MinimumDeviation = txtDev.Text
+                .isSaleable = chkSales.Checked
+                .Remarks = txtRemarks.Text
+
+                .Save_ItemData()
+                MsgBox(.ItemCode & " is now updated", MsgBoxStyle.Information, "Item Master Data")
+
+                frmPLU.RefreshList(Selected_Item.ItemCode)
+                Me.Close()
+            End With
+        End If
+
         Dim newItem As New ItemData
 
         Try

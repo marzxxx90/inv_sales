@@ -17,6 +17,22 @@
         ClearField()
     End Sub
 
+    Friend Sub RefreshList(Optional ByVal ItemCode As String = "")
+        If ItemCode = "" Then
+            Load_PLU()
+            Exit Sub
+        End If
+
+        Dim loadITEM As New ItemData
+        loadITEM.Load_Item(ItemCode)
+        Dim lv As ListViewItem = lvItem.FindItemWithText(ItemCode)
+        lv.SubItems(1).Text = loadITEM.Description
+        lv.SubItems(2).Text = loadITEM.Category
+        lv.SubItems(3).Text = loadITEM.UnitOfMeasure
+        lv.SubItems(4).Text = loadITEM.onHand
+        lv.SubItems(5).Text = loadITEM.SalePrice
+    End Sub
+
     Private Sub ClearFields()
         txtCode.Text = ""
         lvItem.Items.Clear()
@@ -170,6 +186,13 @@
     End Sub
 
     Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
-        UNDERCONSTRUCTION()
+        If lvItem.SelectedItems.Count = 0 Then Exit Sub
+
+        Dim itmCode As String = lvItem.FocusedItem.Text
+        Dim selectedITM As New ItemData
+        selectedITM.Load_Item(itmCode)
+
+        frmIMD.Show()
+        frmIMD.Load_ItemData(selectedITM)
     End Sub
 End Class
