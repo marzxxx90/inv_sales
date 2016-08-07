@@ -3,6 +3,9 @@
     Private qtyItm As Double = 1
     Private queued_IMD As New CollectionItemData
 
+    Friend fromSales As Boolean = True
+    Friend fromInventorya As Boolean = False
+
     Friend Sub From_Sales()
         txtCode.Select()
     End Sub
@@ -162,8 +165,13 @@
             selected_Itm.SalePrice = customPrice
         End If
 
-        frmSales.AddItem(selected_Itm, qtyItm)
-        frmSales.ClearSearch()
+        If fromSales Then
+            frmSales.AddItem(selected_Itm, qtyItm)
+            frmSales.ClearSearch()
+        Else
+
+        End If
+        
         Me.Close()
     End Sub
 
