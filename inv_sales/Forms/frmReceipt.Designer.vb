@@ -24,7 +24,7 @@ Partial Class frmReceipt
     Private Sub InitializeComponent()
         Me.txtCode = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.lvReceipt = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -33,6 +33,7 @@ Partial Class frmReceipt
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtCode
@@ -54,22 +55,22 @@ Partial Class frmReceipt
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Search"
         '
-        'ListView1
+        'lvReceipt
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
-        Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(12, 43)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(377, 245)
-        Me.ListView1.TabIndex = 4
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.lvReceipt.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvReceipt.FullRowSelect = True
+        Me.lvReceipt.GridLines = True
+        Me.lvReceipt.Location = New System.Drawing.Point(12, 43)
+        Me.lvReceipt.Name = "lvReceipt"
+        Me.lvReceipt.Size = New System.Drawing.Size(377, 245)
+        Me.lvReceipt.TabIndex = 4
+        Me.lvReceipt.UseCompatibleStateImageBehavior = False
+        Me.lvReceipt.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "OR#"
+        Me.ColumnHeader1.Text = "INVOICE"
         Me.ColumnHeader1.Width = 70
         '
         'ColumnHeader2
@@ -127,27 +128,38 @@ Partial Class frmReceipt
         Me.Button3.Text = "Cancel"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(174, 294)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 28)
+        Me.Button4.TabIndex = 9
+        Me.Button4.Text = "Print"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'frmReceipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(403, 332)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnSearch)
-        Me.Controls.Add(Me.ListView1)
+        Me.Controls.Add(Me.lvReceipt)
         Me.Controls.Add(Me.txtCode)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmReceipt"
-        Me.Text = "Receipt"
+        Me.Text = "Invoice"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents txtCode As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents lvReceipt As System.Windows.Forms.ListView
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
@@ -156,4 +168,5 @@ Partial Class frmReceipt
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

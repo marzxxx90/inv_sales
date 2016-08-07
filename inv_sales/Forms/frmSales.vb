@@ -404,7 +404,7 @@ Public Class frmSales
         End Try
     End Function
 
-    Private Sub txtSearch_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSearch.TextChanged
-
+    Private Sub tsbReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbReceipt.Click
+        frmReceipt.Show()
     End Sub
 End Class

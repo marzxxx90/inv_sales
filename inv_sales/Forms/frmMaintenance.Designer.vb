@@ -74,9 +74,9 @@ Partial Class frmMaintenance
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(7, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(48, 13)
+        Me.Label2.Size = New System.Drawing.Size(52, 13)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "OR Num"
+        Me.Label2.Text = "Invoice #"
         '
         'txtOR
         '
