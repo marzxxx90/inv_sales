@@ -39,8 +39,8 @@ Partial Class frmInventoryIn
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnPost = New System.Windows.Forms.Button()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -56,7 +56,7 @@ Partial Class frmInventoryIn
         Me.txtCode.Name = "txtCode"
         Me.txtCode.ReadOnly = True
         Me.txtCode.Size = New System.Drawing.Size(82, 21)
-        Me.txtCode.TabIndex = 3
+        Me.txtCode.TabIndex = 99
         Me.txtCode.Text = "000001"
         '
         'Label1
@@ -75,7 +75,7 @@ Partial Class frmInventoryIn
         Me.txtBPartner.Location = New System.Drawing.Point(12, 60)
         Me.txtBPartner.Name = "txtBPartner"
         Me.txtBPartner.Size = New System.Drawing.Size(287, 21)
-        Me.txtBPartner.TabIndex = 5
+        Me.txtBPartner.TabIndex = 1
         Me.txtBPartner.Text = "PERFECOM"
         '
         'Label2
@@ -105,7 +105,7 @@ Partial Class frmInventoryIn
         Me.dtpDocDate.Location = New System.Drawing.Point(533, 28)
         Me.dtpDocDate.Name = "dtpDocDate"
         Me.dtpDocDate.Size = New System.Drawing.Size(196, 20)
-        Me.dtpDocDate.TabIndex = 7
+        Me.dtpDocDate.TabIndex = 0
         '
         'lvInventory
         '
@@ -119,7 +119,7 @@ Partial Class frmInventoryIn
         Me.lvInventory.Location = New System.Drawing.Point(12, 87)
         Me.lvInventory.Name = "lvInventory"
         Me.lvInventory.Size = New System.Drawing.Size(717, 205)
-        Me.lvInventory.TabIndex = 8
+        Me.lvInventory.TabIndex = 2
         Me.lvInventory.UseCompatibleStateImageBehavior = False
         Me.lvInventory.View = System.Windows.Forms.View.Details
         '
@@ -183,27 +183,28 @@ Partial Class frmInventoryIn
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Grand Total"
         '
-        'Button3
+        'btnCancel
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(654, 388)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 33)
-        Me.Button3.TabIndex = 13
-        Me.Button3.Text = "&Cancel"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Location = New System.Drawing.Point(654, 388)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 33)
+        Me.btnCancel.TabIndex = 7
+        Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnPost
         '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(573, 388)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 33)
-        Me.Button4.TabIndex = 14
-        Me.Button4.Text = "&Post"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnPost.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnPost.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPost.Location = New System.Drawing.Point(573, 388)
+        Me.btnPost.Name = "btnPost"
+        Me.btnPost.Size = New System.Drawing.Size(75, 33)
+        Me.btnPost.TabIndex = 6
+        Me.btnPost.Text = "&Post"
+        Me.btnPost.UseVisualStyleBackColor = True
         '
         'txtRemarks
         '
@@ -213,7 +214,7 @@ Partial Class frmInventoryIn
         Me.txtRemarks.Multiline = True
         Me.txtRemarks.Name = "txtRemarks"
         Me.txtRemarks.Size = New System.Drawing.Size(309, 79)
-        Me.txtRemarks.TabIndex = 16
+        Me.txtRemarks.TabIndex = 5
         Me.txtRemarks.Text = "PERFECOM"
         '
         'Label5
@@ -245,7 +246,7 @@ Partial Class frmInventoryIn
         Me.txtSearch.Location = New System.Drawing.Point(69, 298)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(310, 20)
-        Me.txtSearch.TabIndex = 18
+        Me.txtSearch.TabIndex = 3
         '
         'btnSearch
         '
@@ -253,7 +254,7 @@ Partial Class frmInventoryIn
         Me.btnSearch.Location = New System.Drawing.Point(385, 296)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch.TabIndex = 19
+        Me.btnSearch.TabIndex = 4
         Me.btnSearch.Text = "&Search"
         Me.btnSearch.UseVisualStyleBackColor = True
         '
@@ -261,14 +262,15 @@ Partial Class frmInventoryIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(741, 429)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtRemarks)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnPost)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.lvInventory)
@@ -281,6 +283,7 @@ Partial Class frmInventoryIn
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(757, 468)
         Me.Name = "frmInventoryIn"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventory In/Out"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -301,8 +304,8 @@ Partial Class frmInventoryIn
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents txtTotal As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents btnCancel As System.Windows.Forms.Button
+    Friend WithEvents btnPost As System.Windows.Forms.Button
     Friend WithEvents txtRemarks As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
