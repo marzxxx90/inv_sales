@@ -6,10 +6,6 @@
 
     Friend ViewReport As ReportType
 
-    Private Sub qrySelectiveDate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub btnSelect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSelect.Click
         Select Case ViewReport
             Case ReportType.Sales
@@ -19,7 +15,7 @@
 
     Private Sub Sales_Report()
         Dim mySql As String = "SELECT * FROM SALES_OR "
-        mySql &= String.Format("WHERE DOCDATE BETWEEN '{0}' AND '{1}' ORDER BY ITEMCODE ASC", _
+        mySql &= String.Format("WHERE DOCDATE BETWEEN '{0}' AND '{1}' ORDER BY CODE ASC", _
                                GetFirstDate(monSelect.SelectionStart).ToShortDateString, GetLastDate(monSelect.SelectionStart).ToShortDateString)
 
         Console.WriteLine(mySql)

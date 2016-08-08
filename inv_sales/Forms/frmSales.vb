@@ -38,12 +38,12 @@ Public Class frmSales
 
     Private Sub CheckOR()
         Dim mySql As String = "SELECT * FROM DOC WHERE CODE = "
-        mySql &= String.Format("'OR#{0:000000}'", ORNUM)
+        mySql &= String.Format("'INV#{0:000000}'", ORNUM)
 
         Dim ds As DataSet = LoadSQL(mySql)
         If ds.Tables(0).Rows.Count >= 1 Then
             canTransact = False
-            MsgBox("OR NUMBER ALREADY EXISTED" + vbCrLf + "PLEASE BE ADVICED", MsgBoxStyle.Critical)
+            MsgBox("INVOICE NUMBER ALREADY EXISTED" + vbCrLf + "PLEASE BE ADVICED", MsgBoxStyle.Critical)
         End If
     End Sub
 
@@ -261,7 +261,7 @@ Public Class frmSales
 
         With dsNewRow
             .Item("DOCTYPE") = DOC_TYPE
-            .Item("CODE") = String.Format("OR#{0:000000}", ORNUM)
+            .Item("CODE") = String.Format("INV#{0:000000}", ORNUM)
             .Item("MOP") = GetModesOfPayment(TransactionMode)
             .Item("CUSTOMER") = unsec_Customer
             .Item("DOCDATE") = CurrentDate
@@ -347,7 +347,8 @@ Public Class frmSales
 
         ' Execute SQL
         Dim mySql As String = "SELECT * FROM SALES_OR WHERE DOCID = " & docID
-        Dim ds As DataSet = LoadSQL(mySql)
+        Dim ds As DataSet, fillData As String = "OR"
+        ds = LoadSQL(mySql, fillData)
 
         ' Declare AutoPrint
         Dim autoPrint As Reporting
@@ -356,7 +357,7 @@ Public Class frmSales
 
         ' Initialize Auto Print
         report.ReportPath = "Reports\OfficialReceipt.rdlc"
-        report.DataSources.Add(New ReportDataSource("OR", ds.Tables("OR")))
+        report.DataSources.Add(New ReportDataSource(fillData, ds.Tables(fillData)))
 
         ' Assign Parameters
         Dim dic As New Dictionary(Of String, String)

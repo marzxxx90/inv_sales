@@ -16,7 +16,6 @@
         cboSubCat.Items.Clear()
         txtUoM.Text = ""
         txtPrice.Text = ""
-        chkInv.Checked = False
         txtSale.Text = ""
         txtDev.Text = ""
         txtRemarks.Text = ""

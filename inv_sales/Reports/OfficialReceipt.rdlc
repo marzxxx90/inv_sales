@@ -104,10 +104,10 @@
               <Width>0.70833in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.70833in</Width>
+              <Width>0.60749in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.15625in</Width>
+              <Width>0.80209in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.13542in</Width>
@@ -492,7 +492,6 @@
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
                           <Width>0.75pt</Width>
                         </TopBorder>
@@ -514,7 +513,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!SalePrice.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>#,0.00;(#,0.00);'-'</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -526,7 +527,6 @@
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
                           <Width>0.75pt</Width>
                         </TopBorder>
@@ -548,7 +548,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!RowTotal.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>#,0.00;(#,0.00);'-'</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -560,7 +562,6 @@
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
                           <Width>0.75pt</Width>
                         </TopBorder>
@@ -742,7 +743,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!RowTotal.Value)</Value>
-                              <Style />
+                              <Style>
+                                <Format>#,0.00;(#,0.00);'-'</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -754,9 +757,7 @@
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </TopBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -795,7 +796,7 @@
         </TablixRowHierarchy>
         <DataSetName>OR</DataSetName>
         <Height>0.75in</Height>
-        <Width>7.58333in</Width>
+        <Width>7.12833in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -820,10 +821,10 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
-  <Width>7.58333in</Width>
+  <Width>7.12833in</Width>
   <Page>
     <PageHeader>
-      <Height>0.71875in</Height>
+      <Height>1.38542in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -842,8 +843,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox19</rd:DefaultName>
-          <Top>0.34736in</Top>
-          <Left>0.29875in</Left>
+          <Top>1.05708in</Top>
+          <Left>0.1425in</Left>
           <Height>0.25in</Height>
           <Width>0.70125in</Width>
           <Style>
@@ -873,8 +874,8 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>0.08347in</Top>
-          <Left>0.29875in</Left>
+          <Top>0.79319in</Top>
+          <Left>0.1425in</Left>
           <Height>0.25in</Height>
           <Width>2.95125in</Width>
           <ZIndex>1</ZIndex>
@@ -902,8 +903,8 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>0.34875in</Top>
-          <Left>1in</Left>
+          <Top>1.05847in</Top>
+          <Left>0.84375in</Left>
           <Height>0.25in</Height>
           <Width>3.03125in</Width>
           <ZIndex>2</ZIndex>
@@ -937,8 +938,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox19</rd:DefaultName>
-          <Top>0.08208in</Top>
-          <Left>5.29167in</Left>
+          <Top>0.79319in</Top>
+          <Left>4.9375in</Left>
           <Height>0.25in</Height>
           <Width>0.70125in</Width>
           <ZIndex>3</ZIndex>
@@ -971,8 +972,8 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.08347in</Top>
-          <Left>6.06236in</Left>
+          <Top>0.79458in</Top>
+          <Left>5.70819in</Left>
           <Height>0.25in</Height>
           <Width>1.42014in</Width>
           <ZIndex>4</ZIndex>
@@ -989,6 +990,73 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>A&amp;C Baking Supplies</Value>
+                  <Style>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.08in</Top>
+          <Left>1.84707in</Left>
+          <Height>0.29167in</Height>
+          <Width>3.34375in</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Door #5, AE Bldg. Aparente St. Brgy Heights, G.S.C.</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.37444in</Top>
+          <Left>1.23625in</Left>
+          <Height>0.25in</Height>
+          <Width>4.61458in</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -996,10 +1064,64 @@
         </Border>
       </Style>
     </PageHeader>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageFooter>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Prepared by</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>0.24653in</Top>
+          <Left>0.1425in</Left>
+          <Height>0.25in</Height>
+          <Width>1in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>0.06944in</Top>
+          <Left>0.1425in</Left>
+          <Height>0in</Height>
+          <Width>6.83333in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <PageHeight>5.5in</PageHeight>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.5in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.5in</BottomMargin>
     <Style />
   </Page>
   <rd:ReportID>d16fe8f3-559b-4a28-809a-42fcad6199ca</rd:ReportID>

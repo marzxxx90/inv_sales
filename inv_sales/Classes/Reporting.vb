@@ -25,7 +25,6 @@ Public Class Reporting
        ByVal willSeek As Boolean) As Stream
 
         Dim tmpPath As String = System.IO.Path.GetTempPath()
-        'Dim tmpFile As String = name + "." + fileNameExtension
         Dim tmpFile As String = GetRandomString(5) + "." + fileNameExtension
 
         Fname = tmpPath & tmpFile
