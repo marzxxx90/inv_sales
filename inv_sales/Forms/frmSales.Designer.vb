@@ -241,6 +241,7 @@ Partial Class frmSales
         Me.tsbRefund.Name = "tsbRefund"
         Me.tsbRefund.Size = New System.Drawing.Size(71, 22)
         Me.tsbRefund.Text = "REFUND"
+        Me.tsbRefund.Visible = False
         '
         'tsbSalesReturn
         '

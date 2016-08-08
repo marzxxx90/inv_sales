@@ -1,4 +1,8 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿' TODO
+' SALES RETURN - INVENTORY IN
+' RECEIPT - CAN DO VOIDING AND REPRINT
+
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmSales
 
@@ -406,6 +410,6 @@ Public Class frmSales
     End Function
 
     Private Sub tsbReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbReceipt.Click
-        frmReceipt.Show()
+        'frmReceipt.Show()
     End Sub
 End Class

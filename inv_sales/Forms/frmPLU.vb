@@ -7,6 +7,16 @@
     Friend fromInventorya As Boolean = False
 
     Friend Sub From_Sales()
+        Me.fromSales = True
+        Me.fromInventorya = False
+
+        txtCode.Select()
+    End Sub
+
+    Friend Sub From_Inventories()
+        Me.fromSales = False
+        Me.fromInventorya = True
+
         txtCode.Select()
     End Sub
 

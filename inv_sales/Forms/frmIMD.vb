@@ -63,6 +63,7 @@
 
                 frmPLU.RefreshList(Selected_Item.ItemCode)
                 Me.Close()
+                Exit Sub
             End With
         End If
 
