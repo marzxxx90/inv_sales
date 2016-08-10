@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "SalesInventory"
-#define MyAppVersion "1"
+#define MyAppVersion "b2"
 #define MyAppPublisher "Stealth Assassin"
 #define MyAppExeName "inv_sales.exe"
 
@@ -18,7 +18,7 @@ AppPublisher={#MyAppPublisher}
 DefaultDirName={pf}\cdt-S0ft\SalesInventory
 DefaultGroupName=cdt-S0ft\SalesInventory
 OutputDir=D:\CaDeAtH\Documents\DevInstaller\SalesInventory
-OutputBaseFilename=salesinventory
+OutputBaseFilename=salesinventoryb2
 Compression=lzma
 SolidCompression=yes
 
