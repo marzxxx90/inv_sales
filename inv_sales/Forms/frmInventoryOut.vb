@@ -50,7 +50,7 @@
     Friend Sub AddItem(ByVal SelectedItem As ItemData, Optional ByVal Qty As Double = 1, Optional ByVal UnitPrice As Double = 0)
         Dim _unitPrice As Double = 0
 
-        _unitPrice = InputBox("Price", "Custom Unit Price", SelectedItem.UnitPrice)
+        '_unitPrice = InputBox("Price", "Custom Unit Price", SelectedItem.UnitPrice)
 
         Dim lv As ListViewItem = lvInventory.Items.Add(SelectedItem.ItemCode)
         lv.SubItems.Add(SelectedItem.Description)
@@ -71,6 +71,11 @@
         lv.SubItems.Add(total.ToString("#,#00.00"))
     End Sub
 
+    Friend Sub ClearSearch()
+        txtSearch.Text = ""
+        txtSearch.Focus()
+    End Sub
+
     Private Sub btnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearch.Click
         frmPLU.Show()
 
@@ -82,5 +87,9 @@
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
         Me.Close()
+    End Sub
+
+    Private Sub txtSearch_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSearch.KeyPress
+        If isEnter(e) Then btnSearch.PerformClick()
     End Sub
 End Class

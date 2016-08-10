@@ -23,6 +23,16 @@
         Load_Categories()
     End Sub
 
+    Private Function isVerified() As Boolean
+        Dim ver As Boolean = True
+
+        If txtCode.Text = "" Then ver = False : txtCode.Focus()
+        If txtSale.Text = "" Then txtSale.Text = 0
+        If txtPrice.Text = "" Then txtPrice.Text = 0
+
+        Return ver
+    End Function
+
     Friend Sub Load_ItemData(ByVal itm As ItemData)
         ClearFields()
         txtCode.Enabled = False 'Disable Item Code
@@ -67,6 +77,10 @@
             End With
         End If
 
+        If Not isVerified() Then
+            Exit Sub
+        End If
+
         Dim newItem As New ItemData
 
         Try
@@ -91,6 +105,7 @@
             End With
         Catch ex As Exception
             MsgBox("Failed to SAVE the ITEM", MsgBoxStyle.Critical)
+            Log_Report("IMD - " & ex.ToString)
         End Try
 
     End Sub
