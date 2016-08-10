@@ -315,7 +315,7 @@ Public Class frmSales
 
             database.SaveEntry(ds)
 
-            itm.onHand -= 1
+            itm.onHand -= ht.Value
             itm.Save_ItemData()
         Next
         ItemPosted()
@@ -411,5 +411,9 @@ Public Class frmSales
 
     Private Sub tsbReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbReceipt.Click
         'frmReceipt.Show()
+    End Sub
+
+    Private Sub lvSale_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lvSale.SelectedIndexChanged
+
     End Sub
 End Class

@@ -175,11 +175,16 @@
             selected_Itm.SalePrice = customPrice
         End If
 
+        Dim UnitPrice As Double = 0
+        If fromInventory Then
+            UnitPrice = InputBox("Price: ", "Custom Unit Price", selected_Itm.UnitPrice)
+        End If
+
         If fromSales Then
             frmSales.AddItem(selected_Itm, qtyItm)
             frmSales.ClearSearch()
         Else
-            frmInventoryIn.AddItem(selected_Itm, qtyItm)
+            frmInventoryIn.AddItem(selected_Itm, qtyItm, UnitPrice)
             frmInventoryIn.ClearSearch()
         End If
         

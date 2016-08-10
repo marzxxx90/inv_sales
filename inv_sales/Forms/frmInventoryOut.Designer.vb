@@ -30,13 +30,13 @@ Partial Class frmInventoryIn
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpDocDate = New System.Windows.Forms.DateTimePicker()
         Me.lvInventory = New System.Windows.Forms.ListView()
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
@@ -112,7 +112,7 @@ Partial Class frmInventoryIn
         Me.lvInventory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lvInventory.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.lvInventory.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14})
         Me.lvInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvInventory.FullRowSelect = True
         Me.lvInventory.GridLines = True
@@ -123,42 +123,38 @@ Partial Class frmInventoryIn
         Me.lvInventory.UseCompatibleStateImageBehavior = False
         Me.lvInventory.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader5
+        'ColumnHeader3
         '
-        Me.ColumnHeader5.Text = "Item Code"
-        Me.ColumnHeader5.Width = 89
+        Me.ColumnHeader3.Text = "ItemCode"
+        Me.ColumnHeader3.Width = 94
         '
-        'ColumnHeader6
+        'ColumnHeader4
         '
-        Me.ColumnHeader6.Text = "Description"
-        Me.ColumnHeader6.Width = 163
+        Me.ColumnHeader4.Text = "Description"
+        Me.ColumnHeader4.Width = 163
         '
-        'ColumnHeader7
+        'ColumnHeader10
         '
-        Me.ColumnHeader7.Text = "Category"
-        Me.ColumnHeader7.Width = 95
+        Me.ColumnHeader10.Text = "Category"
+        Me.ColumnHeader10.Width = 123
         '
-        'ColumnHeader8
+        'ColumnHeader11
         '
-        Me.ColumnHeader8.Text = "Qty"
-        Me.ColumnHeader8.Width = 52
+        Me.ColumnHeader11.Text = "Qty"
         '
-        'ColumnHeader9
+        'ColumnHeader12
         '
-        Me.ColumnHeader9.DisplayIndex = 5
-        Me.ColumnHeader9.Text = "Price"
-        Me.ColumnHeader9.Width = 90
+        Me.ColumnHeader12.Text = "UoM"
         '
-        'ColumnHeader1
+        'ColumnHeader13
         '
-        Me.ColumnHeader1.DisplayIndex = 6
-        Me.ColumnHeader1.Text = "Total"
-        Me.ColumnHeader1.Width = 125
+        Me.ColumnHeader13.Text = "Price"
+        Me.ColumnHeader13.Width = 101
         '
-        'ColumnHeader2
+        'ColumnHeader14
         '
-        Me.ColumnHeader2.DisplayIndex = 4
-        Me.ColumnHeader2.Text = "UoM"
+        Me.ColumnHeader14.Text = "Total"
+        Me.ColumnHeader14.Width = 98
         '
         'txtTotal
         '
@@ -176,10 +172,10 @@ Partial Class frmInventoryIn
         '
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(542, 302)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(530, 301)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 15)
+        Me.Label4.Size = New System.Drawing.Size(86, 18)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Grand Total"
         '
@@ -246,7 +242,7 @@ Partial Class frmInventoryIn
         Me.txtSearch.Location = New System.Drawing.Point(69, 298)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(310, 20)
-        Me.txtSearch.TabIndex = 3
+        Me.txtSearch.TabIndex = 2
         '
         'btnSearch
         '
@@ -254,7 +250,7 @@ Partial Class frmInventoryIn
         Me.btnSearch.Location = New System.Drawing.Point(385, 296)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch.TabIndex = 4
+        Me.btnSearch.TabIndex = 3
         Me.btnSearch.Text = "&Search"
         Me.btnSearch.UseVisualStyleBackColor = True
         '
@@ -296,20 +292,20 @@ Partial Class frmInventoryIn
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents dtpDocDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents lvInventory As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents txtTotal As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents btnPost As System.Windows.Forms.Button
     Friend WithEvents txtRemarks As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents btnSearch As System.Windows.Forms.Button
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader10 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader11 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader13 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
 End Class
