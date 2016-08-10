@@ -5,6 +5,7 @@
     End Sub
 
     Private Sub btnGR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGR.Click
+        frmInventoryIn.Load_GoodsReceipt()
         frmInventoryIn.Show()
     End Sub
 

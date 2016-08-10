@@ -1,11 +1,18 @@
 ﻿Public Class frmInventoryIn
 
     Private _DOCNUM As Integer
+    Friend DocumentType As DocType
 
-    Enum FormChange
-        GoodsReceipt = 1 'Inventory IN
-        GoodsIssue = 0 'Inventory OUT
+    Enum DocType As Integer
+        GoodsIssue = 0
+        GoodsReceipt = 1
     End Enum
+
+
+    Friend Sub Load_GoodsReceipt()
+        Me.Text = "Inventory In - Goods Receipt"
+        DocumentType = DocType.GoodsReceipt
+    End Sub
 
     Private Sub frmInventoryIn_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ClearFields()
@@ -14,12 +21,18 @@
 
     Private Sub Generate_DocNum(Optional ByVal DocNum As Integer = 0)
         If DocNum = 0 Then
-            _DOCNUM = GetOption("DOCNUM")
+
+            Dim OptionKey As String = ""
+            If DocumentType = DocType.GoodsReceipt Then OptionKey = "STINUM"
+            If DocumentType = DocType.GoodsIssue Then OptionKey = "STONUM"
+
+            _DOCNUM = GetOption(OptionKey)
         Else
             _DOCNUM = DocNum
         End If
 
         txtCode.Text = String.Format("{0:000000}", _DOCNUM)
+        dtpDocDate.Value = CurrentDate
     End Sub
 
     Private Sub ClearFields()
@@ -36,6 +49,8 @@
 
     Friend Sub AddItem(ByVal SelectedItem As ItemData, Optional ByVal Qty As Double = 1, Optional ByVal UnitPrice As Double = 0)
         Dim _unitPrice As Double = 0
+
+        _unitPrice = InputBox("Price", "Custom Unit Price", SelectedItem.UnitPrice)
 
         Dim lv As ListViewItem = lvInventory.Items.Add(SelectedItem.ItemCode)
         lv.SubItems.Add(SelectedItem.Description)
@@ -61,6 +76,7 @@
 
         If txtSearch.Text.Length > 0 Then frmPLU.SearchSelect(txtSearch.Text) : Exit Sub
 
+        frmPLU.From_Inventories()
         frmPLU.Load_PLU()
     End Sub
 

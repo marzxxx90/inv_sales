@@ -87,7 +87,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CollectionItemData.vb" />
-    <Compile Include="Classes\InventoryChange.vb" />
     <Compile Include="Classes\ItemData.vb" />
     <Compile Include="Classes\LicenseKey.vb" />
     <Compile Include="Classes\Reporting.vb" />

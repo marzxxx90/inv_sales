@@ -14,8 +14,8 @@
     End Sub
 
     Private Sub tsbtnInv_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbtnInv.Click
-        UNDERCONSTRUCTION()
-        'loadChild(frmInvSelect)
+        'UNDERCONSTRUCTION()
+        loadChild(frmInvSelect)
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click

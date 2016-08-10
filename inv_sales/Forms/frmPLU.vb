@@ -4,18 +4,18 @@
     Private queued_IMD As New CollectionItemData
 
     Friend fromSales As Boolean = True
-    Friend fromInventorya As Boolean = False
+    Friend fromInventory As Boolean = False
 
     Friend Sub From_Sales()
         Me.fromSales = True
-        Me.fromInventorya = False
+        Me.fromInventory = False
 
         txtCode.Select()
     End Sub
 
     Friend Sub From_Inventories()
         Me.fromSales = False
-        Me.fromInventorya = True
+        Me.fromInventory = True
 
         txtCode.Select()
     End Sub
@@ -179,7 +179,7 @@
             frmSales.AddItem(selected_Itm, qtyItm)
             frmSales.ClearSearch()
         Else
-
+            frmInventoryIn.Show()
         End If
         
         Me.Close()
