@@ -237,6 +237,9 @@
     <EmbeddedResource Include="Reports\OfficialReceipt.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Outstanding.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\qrySelectiveDate.resx">
       <DependentUpon>qrySelectiveDate.vb</DependentUpon>
     </EmbeddedResource>

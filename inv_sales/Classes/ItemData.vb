@@ -217,6 +217,20 @@
         database.SaveEntry(ds, isNew)
     End Sub
 
+    Public Function isExisted(ByVal itemCode As String) As Boolean
+        Dim mySql As String
+        Dim fillData As String = "ITEMMASTER"
+
+        mySql = String.Format("SELECT * FROM {1} WHERE ITEMCODE = '{0}'", itemCode, fillData)
+        Dim ds As DataSet = LoadSQL(mySql, fillData)
+
+        If ds.Tables(0).Rows.Count >= 0 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
     Public Sub Load_Item(ByVal itemCode As String)
         On Error Resume Next
 

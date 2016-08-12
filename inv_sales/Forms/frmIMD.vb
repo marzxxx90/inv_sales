@@ -17,7 +17,7 @@
         txtUoM.Text = ""
         txtPrice.Text = ""
         txtSale.Text = ""
-        txtDev.Text = ""
+        txtDev.Text = "0"
         txtRemarks.Text = ""
 
         Load_Categories()
@@ -29,6 +29,7 @@
         If txtCode.Text = "" Then ver = False : txtCode.Focus()
         If txtSale.Text = "" Then txtSale.Text = 0
         If txtPrice.Text = "" Then txtPrice.Text = 0
+        If txtDev.Text = "" Then txtDev.Text = 0
 
         Return ver
     End Function

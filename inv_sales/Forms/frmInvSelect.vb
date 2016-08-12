@@ -10,6 +10,7 @@
     End Sub
 
     Private Sub btnGI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGI.Click
+        frmInventoryIn.Load_GoodsIssue()
         frmInventoryIn.Show()
     End Sub
 End Class

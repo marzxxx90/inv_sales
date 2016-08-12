@@ -9,7 +9,6 @@
         GoodsReceipt = 1
     End Enum
 
-
     Private Sub DisplayGrandTotal(ByVal total As Double)
         txtTotal.Text = total.ToString("Php #,##0.00")
     End Sub
@@ -17,6 +16,11 @@
     Friend Sub Load_GoodsReceipt()
         Me.Text = "Inventory In - Goods Receipt"
         DocumentType = DocType.GoodsReceipt
+    End Sub
+
+    Friend Sub Load_GoodsIssue()
+        Me.Text = "Inventory Out - Goods Issue"
+        DocumentType = DocType.GoodsIssue
     End Sub
 
     Private Sub frmInventoryIn_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -95,7 +99,6 @@
             lv.SubItems.Add(total.ToString("#,#00.00"))
         End If
 
-
         DOC_TOTAL += total
         DisplayGrandTotal(DOC_TOTAL)
     End Sub
@@ -141,7 +144,7 @@
             Exit Sub
         End If
 
-        Dim fillData As String, mySql As String, DocPrefix As String
+        Dim fillData As String = "", mySql As String, DocPrefix As String
         Select Case DocumentType
             Case DocType.GoodsReceipt
                 DocPrefix = "STI#"
@@ -153,7 +156,8 @@
 
         ' Creating Document
         Console.WriteLine("DocNum: " & _DOCNUM)
-        fillData = "GOODSRECEIPT"
+        If DocumentType = DocType.GoodsReceipt Then fillData = "GOODSRECEIPT"
+        If DocumentType = DocType.GoodsIssue Then fillData = "GOODSISSUE"
 
         mySql = String.Format("SELECT * FROM {0} ROWS 1", fillData)
         Dim ds As DataSet = LoadSQL(mySql, fillData)
@@ -173,7 +177,9 @@
 
         ' Create Document Lines
         Dim DOCID As Integer = GetLastID()
-        fillData = "RECEIPTLINES"
+        If DocumentType = DocType.GoodsReceipt Then fillData = "RECEIPTLINES"
+        If DocumentType = DocType.GoodsIssue Then fillData = "ISSUELINES"
+
         mySql = String.Format("SELECT * FROM {0} ROWS 1", fillData)
 
         ds = LoadSQL(mySql, fillData)
@@ -198,7 +204,9 @@
             ds.Tables(fillData).Rows.Add(dsNewRow)
             database.SaveEntry(ds)
 
-            saveItm.onHand += CDbl(lv.SubItems(3).Text)
+            If DocumentType = DocType.GoodsReceipt Then saveItm.onHand += CDbl(lv.SubItems(3).Text)
+            If DocumentType = DocType.GoodsIssue Then saveItm.onHand -= CDbl(lv.SubItems(3).Text)
+
             saveItm.Save_ItemData()
         Next
 

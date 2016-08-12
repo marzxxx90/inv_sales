@@ -154,14 +154,14 @@
     End Sub
 
 #Region "Log Module"
-    Const LOG_FILE As String = "-log.txt"
+    Const LOG_FILE As String = "syslog.txt"
     Private Sub CreateLog()
         Dim fsEsk As New System.IO.FileStream(Now.ToString("MMddyyyy") & LOG_FILE, IO.FileMode.CreateNew)
         fsEsk.Close()
     End Sub
 
     Friend Sub Log_Report(ByVal str As String)
-        If Not System.IO.File.Exists(Now.ToString("MMddyyyy") & LOG_FILE) Then CreateLog()
+        If Not System.IO.File.Exists(LOG_FILE) Then CreateLog()
 
         Dim recorded_log As String = _
             String.Format("[{0}] " & str, Now.ToString("MM/dd/yyyy HH:mm:ss"))
