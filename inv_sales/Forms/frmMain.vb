@@ -39,4 +39,11 @@
         qrySelectiveDate.Show()
     End Sub
 
+    Private Sub OutstandingToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OutstandingToolStripMenuItem.Click
+        Dim mySql As String = "SELECT * FROM ITEMMASTER WHERE onHold <> 1 AND onHand <> 0 AND isInv = 1 ORDER BY ITEMCODE ASC"
+        Dim ds As DataSet = LoadSQL(mySql)
+
+        frmReport.ReportInit(mySql, "dsOutstanding", "Reports\Outstanding.rdlc")
+        frmReport.Show()
+    End Sub
 End Class

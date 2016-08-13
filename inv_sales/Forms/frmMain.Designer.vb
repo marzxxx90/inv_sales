@@ -40,6 +40,8 @@ Partial Class frmMain
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tssCurrentDate = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tmr_Closer = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.OutstandingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -51,7 +53,7 @@ Partial Class frmMain
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbtnSales, Me.tsbtnInv, Me.ToolStripSeparator1, Me.tsbtnExit})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(140, 417)
+        Me.ToolStrip1.Size = New System.Drawing.Size(133, 417)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -62,7 +64,7 @@ Partial Class frmMain
         Me.tsbtnSales.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.tsbtnSales.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbtnSales.Name = "tsbtnSales"
-        Me.tsbtnSales.Size = New System.Drawing.Size(137, 68)
+        Me.tsbtnSales.Size = New System.Drawing.Size(130, 68)
         Me.tsbtnSales.Text = "SALES"
         Me.tsbtnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -73,13 +75,13 @@ Partial Class frmMain
         Me.tsbtnInv.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.tsbtnInv.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbtnInv.Name = "tsbtnInv"
-        Me.tsbtnInv.Size = New System.Drawing.Size(137, 68)
+        Me.tsbtnInv.Size = New System.Drawing.Size(130, 68)
         Me.tsbtnInv.Text = "INVENTORY"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(137, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(130, 6)
         '
         'tsbtnExit
         '
@@ -88,7 +90,7 @@ Partial Class frmMain
         Me.tsbtnExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.tsbtnExit.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbtnExit.Name = "tsbtnExit"
-        Me.tsbtnExit.Size = New System.Drawing.Size(137, 68)
+        Me.tsbtnExit.Size = New System.Drawing.Size(130, 68)
         Me.tsbtnExit.Text = "EXIT"
         '
         'MenuStrip1
@@ -104,63 +106,74 @@ Partial Class frmMain
         '
         Me.SystemToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MaintenanceToolStripMenuItem, Me.ToolStripSeparator2, Me.ExitToolStripMenuItem})
         Me.SystemToolStripMenuItem.Name = "SystemToolStripMenuItem"
-        Me.SystemToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.SystemToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.SystemToolStripMenuItem.Text = "&System"
         '
         'MaintenanceToolStripMenuItem
         '
         Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
-        Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.MaintenanceToolStripMenuItem.Text = "&Maintenance"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(140, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(132, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'ReportsToolStripMenuItem
         '
-        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalesReportToolStripMenuItem, Me.InventoryReportsToolStripMenuItem})
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalesReportToolStripMenuItem, Me.InventoryReportsToolStripMenuItem, Me.ToolStripSeparator3, Me.OutstandingToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.ReportsToolStripMenuItem.Text = "&Reports"
         '
         'SalesReportToolStripMenuItem
         '
         Me.SalesReportToolStripMenuItem.Name = "SalesReportToolStripMenuItem"
-        Me.SalesReportToolStripMenuItem.Size = New System.Drawing.Size(167, 22)
+        Me.SalesReportToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.SalesReportToolStripMenuItem.Text = "Sales Reports"
         '
         'InventoryReportsToolStripMenuItem
         '
         Me.InventoryReportsToolStripMenuItem.Name = "InventoryReportsToolStripMenuItem"
-        Me.InventoryReportsToolStripMenuItem.Size = New System.Drawing.Size(167, 22)
+        Me.InventoryReportsToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.InventoryReportsToolStripMenuItem.Text = "Inventory Reports"
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssCurrentDate})
-        Me.StatusStrip1.Location = New System.Drawing.Point(140, 419)
+        Me.StatusStrip1.Location = New System.Drawing.Point(133, 419)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(821, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(828, 22)
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'tssCurrentDate
         '
         Me.tssCurrentDate.Name = "tssCurrentDate"
-        Me.tssCurrentDate.Size = New System.Drawing.Size(30, 17)
+        Me.tssCurrentDate.Size = New System.Drawing.Size(29, 17)
         Me.tssCurrentDate.Text = "IDLE"
         '
         'tmr_Closer
         '
         Me.tmr_Closer.Interval = 1000
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(160, 6)
+        '
+        'OutstandingToolStripMenuItem
+        '
+        Me.OutstandingToolStripMenuItem.Name = "OutstandingToolStripMenuItem"
+        Me.OutstandingToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.OutstandingToolStripMenuItem.Text = "&Outstanding"
         '
         'frmMain
         '
@@ -202,4 +215,6 @@ Partial Class frmMain
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents tssCurrentDate As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tmr_Closer As System.Windows.Forms.Timer
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents OutstandingToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
